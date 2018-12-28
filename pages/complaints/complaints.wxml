@@ -1,0 +1,5 @@
+<import src="../../tabbar.wxml" />
+
+<template is="tabBar" data="{{tabBar}}" />
+
+<text>投诉中心</text>

@@ -1,5 +1,2 @@
 <!--index.wxml-->
-<view class="container">
-  <button bindtap='login'>登陆</button>
-  <text>{{text}}</text>
-</view>
+

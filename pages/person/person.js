@@ -1,19 +1,21 @@
-const app = getApp()
-
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    user_info: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log('输出一下'+getApp().globalData.user_info)
+    this.setData({
+      user_info: app.globalData.user_info
+    })
   },
 
   /**
@@ -27,13 +29,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-     wx.showLoading({
-        title: '登陆中'
+    if (this.data.user_info != null) {
+      if (this.data.user_info.role == 0)
+        app.editTabBar1();
+      else
+        app.editTabBar();
+    }else{
+      this.setData({
+        user_info:app.globalData.user_info
       })
-
-      setTimeout(function(){
-        wx.hideLoading();
-      },3000)
+    }
   },
 
   /**
@@ -69,6 +74,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-
+  }
 })
