@@ -1,0 +1,10 @@
+<!--person-->
+<import src="../../tabbar.wxml" />
+
+<template is="tabBar" data="{{tabBar}}" />
+
+<view class='container'>
+  <open-data type='userAvatarUrl'></open-data>
+  <open-data type='userNickName'></open-data>
+  <text>{{user_info.name}}</text>
+</view>

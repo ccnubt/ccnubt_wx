@@ -1,0 +1,5 @@
+<import src="../../tabbar.wxml"/> 
+
+ <template is="tabBar" data="{{tabBar}}"/>
+
+<text>预约中心</text>

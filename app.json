@@ -1,7 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/person/person",
+    "pages/register/register",
+    "pages/activity/activity",
+    "pages/complaints/complaints",
+    "pages/oder/oder",
+    "pages/oderdetail/oderdetail",
+    "pages/statu/statu"
   ],
   "window":{
     "backgroundTextStyle":"light",
