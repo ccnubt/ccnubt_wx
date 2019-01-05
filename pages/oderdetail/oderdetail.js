@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    reservations:[],
+    status_tag: ['已取消', '待接单', '已接单', '维修中', '维修成功', '维修失败', '待评价', '已完成']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
+    var that = this;
+    app.wxRequest('GET','/user/myreservation/',{},function(res){
+      console.log(res.reservations)
+      if (res.result_code == 1){
+        that.setData({reservations: res.reservations})
+      }
+    })
   },
 
   /**

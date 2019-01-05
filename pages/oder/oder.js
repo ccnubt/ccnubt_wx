@@ -5,7 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    detail: 222
+  },
+  /**
+   * 自定义的时间处理函数
+   */
+  bindInput: function(e){
+    this.setData({detail: e.detail.value})
+  },
+  commit(){
+    // console.log(this.data.detail)
+    app.wxRequest('POST','/user/reserve/',{detail: this.data.detail},function (res){
+      if (res.result_code == 1){
+        wx.redirectTo({
+          url: '../oderdetail/oderdetail',
+        })
+      }
+    })
   },
 
   /**

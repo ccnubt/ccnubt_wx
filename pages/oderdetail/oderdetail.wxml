@@ -1,7 +1,13 @@
 
 <import src="../../tabbar.wxml"/> 
 
- <template is="tabBar" data="{{tabBar}}"/>
-
+<template is="tabBar" data="{{tabBar}}"/>
 
 <text>工单详情</text>
+<view wx:for="{{reservations}}">
+  <view class='r_item'>
+    <text class='r_id'>订单编号:{{item.id}}</text>   
+    <text class='r_status'>订单状态: {{status_tag[item.status]}}</text>
+  </view>
+  
+</view>
