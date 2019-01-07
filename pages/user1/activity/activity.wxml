@@ -1,6 +1,0 @@
-<import src="../../tabbar.wxml" />
-
-<template is="tabBar" data="{{tabBar}}" />
-
-
-<text>活动查看</text>

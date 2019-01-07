@@ -37,10 +37,38 @@ Component({
         }
       })
     },
-    evaluate: function(e) {
-     var id = e.currentTarget.dataset.id;
-      wx.navigateTo({
-        url: '/pages/user/evaluate/evaluate?id=' + id,
+    r_success: function (e) {
+      var id = e.currentTarget.dataset.id;
+      app.wxRequest('GET', '/user/finish/' + id + '/', {}, function (res) {
+        if (res.result_code == 1) {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000,
+          })
+          setTimeout(function () {
+            wx.reLaunch({
+              url: '/pages/member/member?page=reservation'
+            })
+          }, 2000);
+        }
+      })
+    },
+    r_fail: function (e) {
+      var id = e.currentTarget.dataset.id;
+      app.wxRequest('GET', '/user/unfinish/' + id + '/', {}, function (res) {
+        if (res.result_code == 1) {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000,
+          })
+          setTimeout(function () {
+            wx.reLaunch({
+              url: '/pages/member/member?page=reservation'
+            })
+          }, 2000);
+        }
       })
     }
   },

@@ -30,7 +30,7 @@ Component({
             duration: 2000,
           })
           wx.reLaunch({
-            url: '/pages/user/user?page=reservation',
+            url: 'user?page=reservation',
           })
         }
       })
