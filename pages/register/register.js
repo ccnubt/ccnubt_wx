@@ -1,27 +1,60 @@
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    items:[
-      {name:'male',value:'男'},
-      {name:'female',value:'女'}
-    ],
-    info:{
-      name:null,
-      phone:null,
-      sex:null,
-      qq:null
-    }
-    
+    name:null,
+    phone:null,
+    sex:null,
+    qq:null
   },
-
+  sex_radio({ detail = {} }) {
+    this.setData({
+      sex: detail.value
+    });
+  },
+  commit: function(e){
+    console.log(e);
+    var name = e.detail.value.name;
+    var sex = this.data.sex=='女'? 'female':'male'; 
+    var qq = e.detail.value.qq;
+    var phone = e.detail.value.phone;
+    console.log(sex);
+    app.wxRequest('POST','/auth/register/',{
+      info: { name,qq,sex,phone }
+    }, function(res){
+      if (res.result_code == 1){
+        var info = res.user_info;
+        app.globalData.user_info  = info;
+        if (info.role==0){
+          wx.reLaunch({
+            url: '/pages/user/user?page=me'
+          })
+        }
+        else if (info.role==1){
+          wx.reLaunch({
+            url: '/pages/member/member?page=me'
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    if (app.globalData.user_info){
+      var info = app.globalData.user_info;
+      this.setData({
+        name: info.name,
+        sex: info.sex == 'female' ? '女' : '男',
+        qq:info.qq,
+        phone: info.phone
+      })
+       
+    }
   },
 
   /**
@@ -71,68 +104,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-
-  radioChange(e){
-    console.log('radio发生change事件',e.detail.value)
-    var tinfo = this.data['info'];
-    tinfo.sex = e.detail.value;
-    this.setData({
-      info:tinfo
-    })
-  },
-
-  nameInput(e){
-    var tinfo = this.data['info'];
-    tinfo.name = e.detail.value;
-    this.setData({
-      info: tinfo
-    })
-  },
-
-  phoneInput(e){
-    var tinfo = this.data['info'];
-    tinfo.phone = e.detail.value;
-    this.setData({
-      info: tinfo
-    })
-  },
-
-  qqInput(e){
-    var tinfo = this.data['info'];
-    tinfo.qq = e.detail.value;
-    this.setData({
-      info: tinfo
-    })
-  },
-
-  commitInfo:function(){
-    console.log(this.data);
-    console.log(this.data['info']);
-    var agr;
-    var that = this;
-    wx.getStorage({
-      key: 'api_key',
-      success: function (res) {
-        console.log('api_key'+res.data)
-        agr=res.data
-        console.log('agr' + agr);
-        wx.request({
-          url: 'https://bt.yuancl.site/auth/register/?api_key=' + agr,
-          method: 'POST',
-          data: {
-            info: that.data['info']
-          },
-          success(res) {
-            console.log(res.data);
-            setTimeout(function () {
-              wx.reLaunch({
-                url: '/pages/person/person'
-              })
-            }, 2000);
-          }
-        })
-      },
-    })
   }
 })

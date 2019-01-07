@@ -2,7 +2,6 @@
 <view class='container'>
   <open-data type='userAvatarUrl'></open-data>
   <open-data type='userNickName' class="img"></open-data>
-  <text>{{user_info.name}}</text>
 </view>
 <i-cell-group>
   <i-cell title="姓名："  value="{{user_info.name}}">
@@ -17,7 +16,7 @@
   <i-cell title="手机号码：" value="{{user_info.phone}}">
     <i-icon slot="icon" type='mobilephone' > </i-icon>
   </i-cell>
-  <i-cell title="修改个人信息" is-link url="/pages/dashboard/index">
+  <i-cell title="修改个人信息" is-link url="/pages/register/register">
     <i-icon slot="icon" type='brush_fill' > </i-icon>
   </i-cell>
 </i-cell-group>
