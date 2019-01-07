@@ -20,7 +20,21 @@ Component({
    */
  
   methods: {
-
+    orderthis: function(e){
+      var id = e.currentTarget.dataset.id;
+      app.wxRequest('GET', '/user/order/' + id + '/', {}, function (res) {
+        if (res.result_code == 1) {
+          wx.showToast({
+            title: '接单成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.reLaunch({
+              url: '/pages/member/member?=reservation'
+              })
+        }
+      })
+    }
   },
   lifetimes: {
     attached: function(){
