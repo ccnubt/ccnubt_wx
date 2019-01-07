@@ -1,4 +1,5 @@
 <!--component/reservation/reservation.wxml-->
+<wxs module="filter" src="../../../utils/dateFormat.wxs"></wxs>
 
 <view wx:for="{{reservations}}" wx:for-item="r">
   
@@ -8,13 +9,13 @@
     <view slot="content">
       <view>
         <view>问题描述: {{r.detail}} </view>
-        <view>创建时间: {{r.create_time}}</view> 
+        <view>创建时间: {{filter.dateFormat(r.create_time)}}</view> 
         <view wx-if="{{r.status==1}}">
           <button bindtap='repair' data-id='{{r.id}}'>维修</button>
         </view>
         <view wx-if="{{r.status==2}}">
-          <button bindtap='r_success' data-id='{{r.id}}'>已修好</button>
-          <button bindtap='r_fail' data-id='{{r.id}}'>未修好</button>
+          <i-button type="success" bindtap='r_success' data-id='{{r.id}}' inline="true">已修好</i-button>
+          <i-button type="error " bindtap='r_fail' data-id='{{r.id}}' inline="true">未修好</i-button>
         </view>
       </view>
     </view>
@@ -22,18 +23,17 @@
       <i-collapse-item title="点击查看详细内容"> 
         <view slot="content" class='detail'>
           <view wx:if="{{r.status>=1}}">
-            <view>队员信息</view>
-            <view>姓名： {{r.bt_info.name}}</view>
-            <view>性别： {{r.bt_info.sex=='male'? '男':'女'}}</view>
-            <view>手机： {{r.bt_info.phone}}</view>
-            <view>QQ： {{r.bt_info.qq}}</view>
+            <view>用户</view>
+            <view>姓名： {{r.user_info.name}}</view>
+            <view>性别： {{r.user_info.sex=='male'? '男':'女'}}</view>
+            <view>手机： {{r.user_info.phone}}</view>
+            <view>QQ： {{r.user_info.qq}}</view>
           </view>
           <view wx:if="{{r.status>=6}}">
             <view>评价：{{r.evaluation}}</view>
             <i-rate 
               disabled
               value="{{r.score}}">
-              
             </i-rate>
           </view>
         </view>
