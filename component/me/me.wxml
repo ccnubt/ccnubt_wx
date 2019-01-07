@@ -1,0 +1,24 @@
+<!--component/me/me.wxml-->
+<view class='container'>
+  <open-data type='userAvatarUrl'></open-data>
+  <open-data type='userNickName' class="img"></open-data>
+  <text>{{user_info.name}}</text>
+</view>
+<i-cell-group>
+  <i-cell title="姓名："  value="{{user_info.name}}">
+    <i-icon slot="icon" type='mine'> </i-icon>
+  </i-cell>
+  <i-cell title="性别：" value="{{user_info.sex=='male'? '男':'女'}}">
+    <i-icon slot="icon" type='label' > </i-icon>
+  </i-cell>
+  <i-cell title="QQ：" value="{{user_info.qq}}">
+    <i-icon slot="icon" type='computer' > </i-icon>
+  </i-cell>
+  <i-cell title="手机号码：" value="{{user_info.phone}}">
+    <i-icon slot="icon" type='mobilephone' > </i-icon>
+  </i-cell>
+  <i-cell title="修改个人信息" is-link url="/pages/dashboard/index">
+    <i-icon slot="icon" type='brush_fill' > </i-icon>
+  </i-cell>
+</i-cell-group>
+

@@ -14,8 +14,8 @@
           <button bindtap='repair' data-id='{{r.id}}'>维修</button>
         </view>
         <view wx-if="{{r.status==2}}">
-          <i-button type="success" bindtap='r_success' data-id='{{r.id}}' inline="true">已修好</i-button>
-          <i-button type="error " bindtap='r_fail' data-id='{{r.id}}' inline="true">未修好</i-button>
+          <i-button type="success" size="small" bindtap='r_success' data-id='{{r.id}}' inline="true">已修好</i-button>
+          <i-button type="error " size="small" bindtap='r_fail' data-id='{{r.id}}' inline="true">未修好</i-button>
         </view>
       </view>
     </view>

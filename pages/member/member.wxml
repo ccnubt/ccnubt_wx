@@ -1,6 +1,7 @@
 <view style="padding-bottom:50px;">
   <m-order key="reserve" wx:if="{{current=='order'}}"></m-order>
-  <m-reservation wx:if="{{current=='reservation'}}"> </m-reservation>
+  <m-reservation ke="reservation" wx:if="{{current=='reservation'}}"> </m-reservation>
+  <m-me key="me" wx:if="{{current=='me'}}"></m-me>
 </view>
 <block>
   <i-tab-bar current="{{current}}" fixed="true" bindchange="handleChange">

@@ -1,0 +1,16 @@
+/* component/me/me.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+}
+.img {
+  width: 23px;
+  height: 23px;
+  display: block;
+  margin: auto;
+}

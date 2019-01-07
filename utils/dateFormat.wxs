@@ -4,20 +4,16 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
-
 var filter = {
   dateFormat: function(d){
-    // console.log(d)
     var t = Date.parse(d)
     var date = getDate(t)
-    // console.log(date)
     var year = date.getFullYear()
     var month = date.getMonth() + 1
     var day = date.getDate()
     var hour = date.getHours()
     var minute = date.getMinutes()
     var second = date.getSeconds()
-    console.log([year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':'))
     return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
   }
 }
