@@ -31,9 +31,9 @@ Page({
   onShow: function() {
     if (this.data.user_info != null) {
       if (this.data.user_info.role == 0)
-        app.editTabBar1();
-      else
         app.editTabBar();
+      else
+        app.editTabBar1();
     }else{
       this.setData({
         user_info:app.globalData.user_info

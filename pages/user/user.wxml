@@ -1,0 +1,17 @@
+<!--pages/user/bt_user.wxml-->
+<view style="padding-bottom:50px;">
+  <m-reserve key="reserve" wx:if="{{current=='reserve'}}"></m-reserve>
+  <m-reservation wx:if="{{current=='reservation'}}"> </m-reservation>
+</view>
+<block>
+  <i-tab-bar current="{{current}}" fixed="true" bindchange="handleChange">
+    <i-tab-bar-item key="reserve" icon="brush" current-icon="brush_fill" title="预约"> 
+    </i-tab-bar-item>
+    <i-tab-bar-item key="reservation" icon="group" current-icon="group_fill" title="订单状态"></i-tab-bar-item>
+    <i-tab-bar-item key="activity" icon="activity" current-icon="activity_fill" title="活动"></i-tab-bar-item>
+    <i-tab-bar-item key="me" icon="mine" current-icon="mine_fill"  title="我"></i-tab-bar-item>
+  </i-tab-bar>
+</block>
+
+
+

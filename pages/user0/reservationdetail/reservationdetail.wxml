@@ -1,0 +1,31 @@
+<import src="../../../tabbar.wxml" />
+<wxs module="filter" src="../../../utils/dateFormat.wxs"></wxs>
+
+
+<template is="tabBar" data="{{tabBar}}" />
+
+
+<i-collapse name="">
+  <i-collapse-item wx:for="{{reservations}}
+    title=" 订单编号:{{item.id}} 状态: {{status_tag[item.status+1]}} {{item.status==6? ','+(item.solved? '维修成功': '维修失败'): ''}} " name="{{item.id}}" class="r_item">
+    <view slot="content" class='detail'>
+      <view>
+        <view>问题描述: {{item.detail}} </view>
+        <view>创建时间: {{filter.dateFormat(item.create_time)}}</view> 
+      </view>
+      <view wx:if="{{item.status>=1}}">
+        <view>队员信息</view>
+        <view>姓名： {{item.bt_info.name}}</view>
+        <view>性别： {{item.bt_info.sex=='male'? '男':'女'}}</view>
+        <view>手机： {{item.bt_info.phone}}</view>
+        <view>QQ： {{item.bt_info.qq}}</view>
+      </view>
+      <view wx-if="{{item.status==4 || item.status==3}}">
+        <button bindtap='confirm' data-id='{{item.id}}'>确认</button>
+      </view>
+      <view wx-if="{{item.status==5}}">
+        <button bindtap='evaluate' data-id='{{item.id}}'>评价</button>
+      </view>
+    </view>
+  </i-collapse-item>
+</i-collapse>

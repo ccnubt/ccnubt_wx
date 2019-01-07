@@ -1,18 +1,21 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/person/person",
     "pages/register/register",
-    "pages/activity/activity",
-    "pages/complaints/complaints",
-    "pages/oder/oder",
-    "pages/oderdetail/oderdetail",
-    "pages/statu/statu"
+    "pages/user0/reserve/reserve",
+    "pages/user0/activity/activity",
+    "pages/user0/complaints/complaints",
+    "pages/user0/reservationdetail/reservationdetail",
+    "pages/user0/evaluate/evaluate",
+    "pages/user1/order/order",
+    "pages/user1/orderdetail/orderdetail",
+    "pages/user/user"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

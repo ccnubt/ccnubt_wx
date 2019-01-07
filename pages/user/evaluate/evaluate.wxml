@@ -1,0 +1,12 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view>
+  <form bindsubmit='formSubmit'>
+    <view>
+      评分：<i-rate name="score" bind:change="onRate" value="{{score}}" size="30">{{score}}星 </i-rate>
+    </view>
+    <view>
+      评价： <textarea name='evaluation' placeholder='评价'  class='detail_input'></textarea>
+    </view>
+    <button form-type='submit' >提交评价</button>
+  </form>
+</view>

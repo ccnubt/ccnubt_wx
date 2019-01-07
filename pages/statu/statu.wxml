@@ -1,4 +1,0 @@
-<import src="../../tabbar.wxml" />
-
-<template is="tabBar" data="{{tabBar}}" />
-<text>维修状态</text>

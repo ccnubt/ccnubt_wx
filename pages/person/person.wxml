@@ -1,6 +1,5 @@
 <!--person-->
 <import src="../../tabbar.wxml" />
-
 <template is="tabBar" data="{{tabBar}}" />
 
 <view class='container'>

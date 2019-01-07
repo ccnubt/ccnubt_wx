@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-card": "../../../dist/card/index",
+    "i-collapse": "../../../dist/collapse/index",
+    "i-collapse-item": "../../../dist/collapse-item/index",
+    "i-rate": "../../../dist/rate/index"
+  }
+}

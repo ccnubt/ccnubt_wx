@@ -1,0 +1,29 @@
+<!--pages/user1/oder/oder.wxml-->
+<import src="../../../tabbar.wxml" />
+
+<template is="tabBar" data="{{tabBar:tabBar}}" />
+
+<view class='order_detail' vx:if="{{!loading}}">
+  <view wx:if="{{reservations.length==0}}">没有新订单</view>
+  <view wx:for="{{reservations}}">
+    <view class='r_item' data-index='{{item.id}}' catchtap='panel'>
+      <text class='r_id'>订单编号:{{item.id}}</text>   
+    </view>
+    <view class='detail' wx:if="{{showIndex == item.id}}">
+      <view>
+        <view>问题描述: {{item.detail}} </view>
+        <view>创建时间: {{item.create_time}}</view> 
+      </view>
+      <view >
+        <view>用户信息</view>
+        <view>姓名： {{item.user_info.name}}</view>
+        <view>性别： {{item.user_info.sex=='male'? '男':'女'}}</view>
+        <view>手机： {{item.user_info.phone}}</view>
+        <view>QQ： {{item.user_info.qq}}</view>
+      </view>
+      <view >
+        <button bindtap='orderthis' data-id='{{item.id}}'>接单</button>
+      </view>
+    </view>
+  </view>
+</view>

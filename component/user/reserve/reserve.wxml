@@ -1,0 +1,7 @@
+<!--component/reserve.wxml-->
+<view>
+  <form bindsubmit='commit'>
+    <textarea name="detail" placeholder='问题描述'  class='detail_input'></textarea> 
+    <button form-type='submit' class='oder_button'>预约</button>
+  </form>
+</view>

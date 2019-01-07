@@ -124,7 +124,12 @@ Page({
             info: that.data['info']
           },
           success(res) {
-            console.log(res.data)
+            console.log(res.data);
+            setTimeout(function () {
+              wx.reLaunch({
+                url: '/pages/person/person'
+              })
+            }, 2000);
           }
         })
       },
