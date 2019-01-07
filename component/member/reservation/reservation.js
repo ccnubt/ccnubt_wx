@@ -20,33 +20,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    confirm: function (e) {
+    repair: function (e) {
       var id = e.currentTarget.dataset.id;
-      app.wxRequest('GET', '/user/confirm/' + id + '/', {}, function (res) {
+      app.wxRequest('GET', '/user/repair/' + id + '/', {}, function (res) {
         if (res.result_code == 1) {
           wx.showToast({
-            title: '已确认',
+            title: '成功',
             icon: 'success',
             duration: 2000,
           })
-          wx.reLaunch({
-            url: '/pages/user/user?page=reservation',
-          })
-        }
-      })
-    },
-    cancel: function (e) {
-      var id = e.currentTarget.dataset.id;
-      app.wxRequest('GET', '/user/cancel/' + id + '/', {}, function (res) {
-        if (res.result_code == 1) {
-          wx.showToast({
-            title: '已取消',
-            icon: 'success',
-            duration: 2000,
-          })
-          wx.reLaunch({
-            url: 'user?page=reservation',
-          })
+          setTimeout(function () {
+            wx.reLaunch({
+              url: '/pages/member/member?page=reservation'
+            })
+          }, 2000);
         }
       })
     },
