@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "i-input": "../../../dist/input/index"
+  }
 }

@@ -59,6 +59,9 @@ Component({
   },
   lifetimes: {
     attached: function(){
+      wx.showLoading({
+        title: '加载中',
+      })
       var that = this;
       app.wxRequest('GET', '/user/myreservation/', {}, function (res) {
         console.log(res.reservations)
@@ -66,6 +69,9 @@ Component({
           that.setData({ reservations: res.reservations })
         }
       })
+    },
+    ready: function(){
+      wx.hideLoading();
     }
   }
 })
