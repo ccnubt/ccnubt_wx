@@ -1,5 +1,0 @@
-<!--pages/user0/activity/activity.wxml-->
-<import src="../../../tabbar.wxml" />
-<template is="tabBar" data="{{tabBar}}" />
-
-<text>pages/user0/activity/activity.wxml</text>

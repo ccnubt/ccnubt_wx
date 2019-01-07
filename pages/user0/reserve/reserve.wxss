@@ -1,9 +1,0 @@
-.detail_input{
-  margin: auto;
-  width: 90%;
-  border: 1px solid gray;
-}
-.oder_button{
-  width: 90px;
-  background-color: greenyellow
-}

@@ -1,8 +1,0 @@
-<!--pages/evaluate/evaluate.wxml-->
-<view>
-  <form bindsubmit='formSubmit'>
-    评分： <slider name='score' max="5" value="5" step="1" left-icon="cancel" right-icon="success_no_circle" show-value/>
-    评价： <textarea name='evaluation' placeholder='评价'  class='detail_input'></textarea>
-    <button form-type='submit' >提交评价</button>
-  </form>
-</view>

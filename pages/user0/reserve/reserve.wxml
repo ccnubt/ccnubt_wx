@@ -1,7 +1,0 @@
-<import src="../../../tabbar.wxml"/> 
-
- <template is="tabBar" data="{{tabBar}}"/>
-
-<text>问题描述:</text>
-<textarea placeholder='问题描述' bindinput='bindInput' class='detail_input'></textarea> 
-<button bindtap='commit' class='oder_button'>预约</button>
