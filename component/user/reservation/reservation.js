@@ -22,31 +22,29 @@ Component({
   methods: {
     confirm: function (e) {
       var id = e.currentTarget.dataset.id;
+      var that = this;
       app.wxRequest('GET', '/user/confirm/' + id + '/', {}, function (res) {
         if (res.result_code == 1) {
           wx.showToast({
             title: '已确认',
             icon: 'success',
-            duration: 2000,
+            duration: 1000,
           })
-          wx.reLaunch({
-            url: 'user?page=reservation',
-          })
+          that.reload();
         }
       })
     },
     cancel: function (e) {
       var id = e.currentTarget.dataset.id;
+      var that = this;
       app.wxRequest('GET', '/user/cancel/' + id + '/', {}, function (res) {
         if (res.result_code == 1) {
           wx.showToast({
             title: '已取消',
             icon: 'success',
-            duration: 2000,
+            duration: 1000,
           })
-          wx.reLaunch({
-            url: 'user?page=reservation',
-          })
+          this.reload();
         }
       })
     },
@@ -55,10 +53,8 @@ Component({
       wx.navigateTo({
         url: '/pages/user/evaluate/evaluate?id=' + id,
       })
-    }
-  },
-  lifetimes: {
-    attached: function(){
+    },
+    reload: function(){
       wx.showLoading({
         title: '加载中',
       })
@@ -69,6 +65,12 @@ Component({
           that.setData({ reservations: res.reservations })
         }
       })
+      wx.hideLoading();
+    }
+  },
+  lifetimes: {
+    attached: function(){
+      this.reload();
     },
     ready: function(){
       wx.hideLoading();

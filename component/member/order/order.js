@@ -22,22 +22,19 @@ Component({
   methods: {
     orderthis: function(e){
       var id = e.currentTarget.dataset.id;
+      var that = this;
       app.wxRequest('GET', '/user/order/' + id + '/', {}, function (res) {
         if (res.result_code == 1) {
           wx.showToast({
             title: '接单成功',
             icon: 'success',
-            duration: 2000
+            duration: 1000
           })
-          wx.reLaunch({
-              url: '/pages/member/member?=reservation'
-              })
+          that.reload();
         }
       })
-    }
-  },
-  lifetimes: {
-    attached: function(){
+    },
+    reload: function(){
       var that = this;
       that.setData({ loading: true });
       wx.showLoading({
@@ -51,6 +48,11 @@ Component({
       })
       wx.hideLoading();
       that.setData({ loading: false });
+    }
+  },
+  lifetimes: {
+    attached: function(){
+      this.reload();
     }
   }
 })

@@ -1,11 +1,9 @@
 <!--component/reservation/reservation.wxml-->
 <wxs module="filter" src="../../../utils/dateFormat.wxs"></wxs>
 
-<view wx:for="{{reservations}}" wx:for-item="r">
-  
-  <i-card  title="订单号{{r.id}}" 
-  extra="{{status_tag[r.status+1]}} {{r.status==6? ','+(r.solved? '维修成功': '维修失败'): ''}}"
-  thumb="">
+<view>
+  <i-card  wx:for="{{reservations}}" wx:for-item="r" title="订单号{{r.id}}" class="card"
+  extra="{{status_tag[r.status+1]}} {{r.status==6? ','+(r.solved? '维修成功': '维修失败'): ''}}">
     <view slot="content">
       <view>
         <view>问题描述: {{r.detail}} </view>

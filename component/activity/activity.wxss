@@ -1,1 +1,4 @@
 /* component/Activity/Activity.wxss */
+.card{
+  margin: 5px;
+}

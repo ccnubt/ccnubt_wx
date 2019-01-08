@@ -1,1 +1,4 @@
 /* component/reservation/reservation.wxss */
+.card{
+  margin: 10px;
+}

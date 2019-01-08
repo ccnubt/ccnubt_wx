@@ -1,7 +1,7 @@
 <wxs module="filter" src="../../utils/dateFormat.wxs"></wxs>
 
 <view>
-  <i-card wx:for="{{activities}}" wx:for-item="r" i-class="card" title="{{r.title}}" extra="{{r.pos}}">
+  <i-card wx:for="{{activities}}" wx:for-item="r" class="card" title="{{r.title}}" extra="{{r.pos}}">
     <view slot="content">
       <view>
         <view>时间：{{filter.dateFormat(r.start_time)}}~ {{filter.dateFormat(r.end_time)}}</view>
