@@ -1,0 +1,19 @@
+<wxs module="filter" src="../../utils/dateFormat.wxs"></wxs>
+
+<view>
+  <i-card wx:for="{{activities}}" wx:for-item="r" i-class="card" title="{{r.title}}" extra="{{r.pos}}">
+    <view slot="content">
+      <view>
+        <view>时间：{{filter.dateFormat(r.start_time)}}~ {{filter.dateFormat(r.end_time)}}</view>
+        <view>创建时间: {{r.create_time}}</view>
+      </view>
+      <view slot="footer">
+        <i-collapse-item title="活动详情">
+          <view slot="content" class='detail'>
+            {{r.content}}
+          </view>
+        </i-collapse-item>
+      </view>
+    </view>
+  </i-card>
+</view>

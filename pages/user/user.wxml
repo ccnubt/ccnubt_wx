@@ -3,6 +3,7 @@
   <m-reserve key="reserve" wx:if="{{current=='reserve'}}"></m-reserve>
   <m-reservation wx:if="{{current=='reservation'}}"> </m-reservation>
   <m-me key="me" wx:if="{{current=='me'}}"></m-me>
+  <m-activity key="activity" wx:if="{{current=='activity'}}"> </m-activity>
 </view>
 <block>
   <i-tab-bar current="{{current}}" fixed="true" bindchange="handleChange">

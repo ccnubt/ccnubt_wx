@@ -4,6 +4,7 @@
     "i-tab-bar-item": "../../dist/tab-bar-item/index",
     "m-order": "../../component/member/order/order",
     "m-reservation": "../../component/member/reservation/reservation",
-    "m-me": "../../component/me/me"
+    "m-me": "../../component/me/me",
+    "m-activity": "../../component/activity/activity"
   }
 }

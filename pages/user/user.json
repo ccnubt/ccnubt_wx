@@ -6,6 +6,7 @@
     "i-message": "../../dist/message/index",
     "m-reserve": "../../component/user/reserve/reserve",
     "m-reservation": "../../component/user/reservation/reservation",
-    "m-me": "../../component/me/me"
+    "m-me": "../../component/me/me",
+    "m-activity": "../../component/activity/activity"
   }
 }
