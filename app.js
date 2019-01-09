@@ -28,10 +28,10 @@ App({
                   })
                 }
               },function(res){
-                console.log('端口调用失败' + res.err_msg)
+                // console.log('端口调用失败' + res.err_msg)
               })
             } else {
-              console.log('端口调用失败' + res.err_msg)
+              // console.log('端口调用失败' + res.err_msg)
             }
           }
         })
@@ -39,20 +39,20 @@ App({
     
       globalData: {
         // baseURL: 'https://bt.yuancl.site',
-        baseURL: 'http://192.168.1.115:5000',
+        baseURL: 'http://192.168.43.91:5000',
         userInfo: 'hello',
         user_info: null,
       },
       wxRequest(method, url, data, callback, errFun) {
-        console.log(data)
+        // console.log(data)
         let api_key = wx.getStorageSync('api_key')
-        console.log(api_key)
+        // console.log(api_key)
         wx.request({
           url: getApp().globalData.baseURL + url+'?api_key='+api_key,
           method: method,
           data: data,
           header: {
-            'content-type': 'application/json',//method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
+            'content-type': 'application/json',
             'Accept': 'application/json'
           },
           dataType: 'json',

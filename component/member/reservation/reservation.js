@@ -65,7 +65,7 @@ Component({
     reload: function(){
       var that = this;
       app.wxRequest('GET', '/user/myorder/', {}, function (res) {
-        console.log(res.reservations)
+        // console.log(res.reservations)
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }

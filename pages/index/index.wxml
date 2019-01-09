@@ -1,1 +1,9 @@
 <!--index.wxml-->
+<view class='container'>
+  <image src='../../static/img/bt.jpg'></image>
+  <text>奔腾服务，竭诚为您</text>
+  <view style='width:100%;'>
+    <i-load-more tip="登录中" />
+  </view>
+
+</view>

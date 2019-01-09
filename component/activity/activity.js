@@ -28,7 +28,7 @@ Component({
       })
       var that = this;
       app.wxRequest('GET', '/user/activity/', {}, function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.result_code == 1) {
           that.setData({ activities: res.activities })
         }

@@ -1,5 +1,5 @@
 <!--component/reservation/reservation.wxml-->
-
+<wxs module="filter" src="../../../utils/dateFormat.wxs"></wxs>
 <view >
   <i-card  wx:for="{{reservations}}" wx:for-item="r" i-class="card" title="订单编号:{{r.id}}" 
     extra="{{status_tag[r.status+1]}} {{r.status>=6? ','+(r.solved? '维修成功': '维修失败'): ''}}"
@@ -7,7 +7,7 @@
     <view slot="content">
       <view>
         <view>问题描述: {{r.detail}} </view>
-        <view>创建时间: {{r.create_time}}</view> 
+        <view>创建时间: {{filter.dateFormat(r.create_time)}}</view> 
         <view wx-if="{{r.status==0}}">
           <button bindtap='cancel' data-id='{{r.id}}'>取消订单</button>
         </view>

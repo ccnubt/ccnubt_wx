@@ -60,17 +60,21 @@ Component({
       })
       var that = this;
       app.wxRequest('GET', '/user/myreservation/', {}, function (res) {
-        console.log(res.reservations)
+        // console.log(res.reservations)
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }
       })
       wx.hideLoading();
+    },
+    onPullDownRefresh: function () {
+      this.reload();
     }
   },
   lifetimes: {
     attached: function(){
       this.reload();
+
     },
     ready: function(){
       wx.hideLoading();

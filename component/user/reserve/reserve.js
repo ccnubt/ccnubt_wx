@@ -23,11 +23,12 @@ Component({
   methods: {
     commit: function(e){
       var detail = e.detail.value.detail;
-      console.log(e);
-      app.wxRequest('POST', '/user/reserve/', { detail}, function (res) {
+      var formid = e.detail.formId;
+      console.log(formid)
+      app.wxRequest('POST', '/user/reserve/', { detail, formid}, function (res) {
         if (res.result_code == 1) {
           $Toast({
-            content: '警告的提示',
+            content: '预约成功',
             type: 'success',
             duration: 1
           });

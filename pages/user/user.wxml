@@ -9,7 +9,7 @@
   <i-tab-bar current="{{current}}" fixed="true" bindchange="handleChange">
     <i-tab-bar-item key="reserve" icon="brush" current-icon="brush_fill" title="预约"> 
     </i-tab-bar-item>
-    <i-tab-bar-item key="reservation" icon="group" current-icon="group_fill" title="订单状态"></i-tab-bar-item>
+    <i-tab-bar-item key="reservation" icon="createtask" current-icon="createtask_fill" title="订单状态"></i-tab-bar-item>
     <i-tab-bar-item key="activity" icon="activity" current-icon="activity_fill" title="活动"></i-tab-bar-item>
     <i-tab-bar-item key="me" icon="mine" current-icon="mine_fill"  title="我"></i-tab-bar-item>
   </i-tab-bar>

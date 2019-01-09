@@ -41,7 +41,7 @@ Component({
         title: '加载中',
       })
       app.wxRequest('GET', '/user/unorder/', {}, function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }
