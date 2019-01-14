@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "i-count-down": "../../../dist/count-down/index"
+  }
 }

@@ -13,7 +13,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    code: null
+    code: 'xxxxxx',
+    time: 0
   },
 
   /**
@@ -22,9 +23,11 @@ Component({
   methods: {
     loadcode: function(){
       var that = this;
-      app.wxRequest('GET','/user/mycode/',{},function(res){
+      var code = that.data.code
+      app.wxRequest('GET','/user/mycode/',{param: {code}},function(res){
         if (res.result_code==1){
           that.setData({
+            time: new Date().getTime()+30000,
             code: res.code
           })
         }

@@ -13,7 +13,7 @@
         </view>
         <view wx-if="{{r.status==2}}" class='but2'>
           <i-button type="success" size="small" bindtap='r_success' data-id='{{r.id}}' inline="true">已修好</i-button>
-          <i-button type="warning " size="small" bindtap='r_transfer' data-id='{{r.id}}' inline="true">转让</i-button>
+          <i-button type="warning " size="small" bindtap='r_transfer' data-id='{{r.id}}' inline="true">转  让</i-button>
           <i-button type="error " size="small" bindtap='r_fail' data-id='{{r.id}}' inline="true">未修好</i-button>
         </view>
       </view>
@@ -42,6 +42,7 @@
 </view>
 
 
-<i-modal show-cancel='false' title="订单转接码" visible="{{code_visible}}" bind:ok="code_hide" >
+<i-modal show-cancel='{{false}}' title="订单转接码" visible="{{code_visible}}" bind:ok="code_hide" >
   <view class='modal_code'>{{transfer_code}}</view>
+  <view>(5分钟内有效)</view>
 </i-modal>

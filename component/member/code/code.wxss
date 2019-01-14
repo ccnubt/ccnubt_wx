@@ -8,4 +8,13 @@
 }
 .but{
   width: 50%;
+  text-align: center;
+  margin: 10px auto;
+}
+.tip{
+  font-size: 14px;
+  text-align: center;
+}
+.timer{
+  text-align: center;
 }
