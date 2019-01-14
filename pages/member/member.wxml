@@ -12,3 +12,5 @@
     <i-tab-bar-item key="me" icon="mine" current-icon="mine_fill"  title="我"></i-tab-bar-item>
   </i-tab-bar>
 </block>
+<i-toast id="toast" />
+<i-message id="message" />

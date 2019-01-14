@@ -1,1 +1,11 @@
 /* component/member/code/code.wxss */
+.code{
+  text-align: center;
+  margin: 20% auto;
+  font-size: 30px;
+  color: red;
+  letter-spacing: 2px;
+}
+.but{
+  width: 50%;
+}

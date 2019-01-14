@@ -1,2 +1,7 @@
 <!--component/member/code/code.wxml-->
-<text>component/member/code/code.wxml</text>
+<view class='code'>
+{{code}}
+</view>
+<view>
+  <button class='but' bindtap='loadcode'>刷新</button>
+</view>

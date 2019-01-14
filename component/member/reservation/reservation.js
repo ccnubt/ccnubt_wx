@@ -1,5 +1,7 @@
 // component/reservation/reservation.js
 var app = getApp();
+const { $Toast } = require('../../../dist/base/index');
+const { $Message } = require('../../../dist/base/index');
 Component({
   /**
    * 组件的属性列表
@@ -13,7 +15,9 @@ Component({
    */
   data: {
     reservations: [],
-    status_tag: ['已取消', '待接单', '已接单', '维修中', '维修成功，待确认', '维修失败，待确认', '待评价', '已完成']
+    status_tag: ['已取消', '待接单', '已接单', '维修中', '维修成功，待确认', '维修失败，待确认', '待评价', '已完成'],
+    code_visible: false,
+    transfer_code: null
   },
 
   /**
@@ -46,6 +50,31 @@ Component({
           })
           that.reload();
         }
+      })
+    },
+    code_hide: function(){
+      this.setData({ code_visible: false })
+    },
+    r_transfer: function(e){
+      var id = e.currentTarget.dataset.id;
+      var that = this;
+      app.wxRequest('GET', '/user/transfer/' + id + '/', {}, function (res) {
+        if (res.result_code==1){
+          that.setData({
+            code_visible: true,
+            transfer_code: res.code
+          })
+        }
+        else{
+          $Toast({
+            content: '获取失败',
+            type: 'error'
+          });
+          setTimeout(() => {
+            $Toast.hide();
+          }, 2000);
+        }
+        console.log(res)
       })
     },
     r_fail: function (e) {
