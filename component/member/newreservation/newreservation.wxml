@@ -1,0 +1,14 @@
+<view>
+  <view wx:for="{{reservations}}" wx:for-item="r">
+    <i-card title="订单号{{r.id}}" extra="{{r.user_info.name[0]+'** '}}{{r.user_info.sex=='male'? '(男)':'(女)'}}" thumb="">
+      <view slot="content">
+        <view>
+          <view>问题描述: {{r.detail}} </view>
+          <view>创建时间: {{r.create_time}}</view>
+          <button data-id='{{r.id}}' bindtap='orderthis'>接单</button>
+        </view>
+      </view>
+    </i-card>
+  </view>
+  <view wx:if="!reservations.length">没用新的订单</view>
+</view>

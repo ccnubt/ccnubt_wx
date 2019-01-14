@@ -2,6 +2,7 @@
 App({
       onLaunch: function() {
         var that = this
+        
         wx.login({
           success(res) {
             if (res.code) {
@@ -13,20 +14,22 @@ App({
                   key: 'api_key',
                   data: res['api_key']
                 });
-                if (res['result_code'] == 2) //判断是否完善信息
-                  wx.navigateTo({
-                    url: '../register/register'
-                  })
-                else if (res.user_info.role==0) {
-                  wx.redirectTo({
-                    url: '/pages/user/user',
-                  })
-                }
-                else if (res.user_info.role == 1) {
-                  wx.redirectTo({
-                    url: '/pages/member/member',
-                  })
-                }
+                setTimeout(function(){
+                  if (res['result_code'] == 2) //判断是否完善信息
+                    wx.navigateTo({
+                      url: '../register/register'
+                    })
+                  else if (res.user_info.role == 0) {
+                    wx.redirectTo({
+                      url: '/pages/user/user',
+                    })
+                  }
+                  else if (res.user_info.role == 1) {
+                    wx.redirectTo({
+                      url: '/pages/member/member',
+                    })
+                  }  
+                },3000)
               },function(res){
                 // console.log('端口调用失败' + res.err_msg)
               })
@@ -38,8 +41,8 @@ App({
       },
     
       globalData: {
-        // baseURL: 'https://bt.yuancl.site',
-        baseURL: 'http://192.168.43.91:5000',
+        baseURL: 'https://bt.yuancl.site',
+        // baseURL: 'http://192.168.43.91:5000',
         userInfo: 'hello',
         user_info: null,
       },

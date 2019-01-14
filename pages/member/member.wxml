@@ -1,4 +1,4 @@
-<view style="padding-bottom:50px;">
+<view class='page'>
   <m-order key="reserve" wx:if="{{current=='order'}}"></m-order>
   <m-reservation ke="reservation" wx:if="{{current=='reservation'}}"> </m-reservation>
   <m-me key="me" wx:if="{{current=='me'}}"></m-me>

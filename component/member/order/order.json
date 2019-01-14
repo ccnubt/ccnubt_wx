@@ -1,7 +1,9 @@
 {
   "component": true,
   "usingComponents": {
-    "i-card": "../../../dist/card/index",
-    "i-collapse": "../../../dist/collapse/index"
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index",
+    "m-newreservation": "../newreservation/newreservation",
+    "m-code": "../code/code"
   }
 }

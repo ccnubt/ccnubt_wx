@@ -1,0 +1,14 @@
+/* component/member/order/order.wxss */
+.topbar{
+  height: 30px;
+  border-radius: 2px;
+  background-color: lightblue;
+  text-align: center;
+}
+.more{
+  display: flex;
+  height: 26px;
+  width: 26px;
+  float: right;
+  border-radius: 13px;
+}
