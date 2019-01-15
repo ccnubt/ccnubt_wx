@@ -58,7 +58,7 @@ Component({
           $Message({
             content: '接单码错误或已过期',
             type: 'warning',
-            duration: 5
+            duration: 3
           });
           that.setData({
             Value: ''

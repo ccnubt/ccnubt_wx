@@ -44,7 +44,7 @@ Component({
             icon: 'success',
             duration: 1000,
           })
-          this.reload();
+          that.reload();
         }
       })
     },
