@@ -4,6 +4,7 @@
     "i-tabs": "../../../dist/tabs/index",
     "i-tab": "../../../dist/tab/index",
     "m-newreservation": "../newreservation/newreservation",
-    "m-code": "../code/code"
+    "m-code": "../code/code",
+    "m-receive": "../receive/receive"
   }
 }

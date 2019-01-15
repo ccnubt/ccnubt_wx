@@ -1,9 +1,37 @@
-<!--component/reserve.wxml-->
-<view class='reserve'>
+<i-tabs current="{{ current }}" bindchange="handleChange">
+  <i-tab key="reserve" title="预约"></i-tab>
+  <i-tab key="code" title="接单码"></i-tab>
+</i-tabs>
+
+
+<view class='reserve' wx:if="{{current=='reserve'}}">
   <form bindsubmit='commit' class='form' report-submit="true">
     <view>问题描述：</view>
-    <textarea name="detail" placeholder='问题描述'  class='detail_input'></textarea> 
+    <textarea name="detail" placeholder='问题描述' class='detail_input'></textarea>
     <button form-type='submit' class='oder_button'>预约</button>
   </form>
-  
+</view>
+
+<view wx:elif="{{current=='code'}}">
+  <view class="code" wx:if="{{status==0}}">
+    <form bindsubmit="formSubmit">
+      <view class='content'>
+        <block wx:for="{{Length}}" wx:key="item">
+          <input class='iptbox' value="{{Value.length>=index+1?Value[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+        </block>
+      </view>
+      <input name="code" password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+      <view>
+        <button class="btn-area" formType="submit">提交</button>
+      </view>
+    </form>
+  </view>
+  <view wx:elif="{{status==1}}">
+    {{bt_info.name}}{{bt_info.sex}}
+    <form bindsubmit='commit_code' class='form'>
+      <view>问题描述：</view>
+      <textarea name="detail" placeholder='问题描述' class='detail_input'></textarea>
+      <button form-type='submit' class='oder_button'>预约</button>
+    </form>
+  </view>
 </view>

@@ -7,3 +7,4 @@
 
 <m-newreservation wx:if="{{current=='newreservation'}}"/> 
 <m-code wx:elif="{{current=='code'}}"/> 
+<m-receive wx:elif="{{current=='receive'}}" />

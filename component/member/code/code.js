@@ -23,7 +23,7 @@ Component({
    */
   methods: {
     settime: function(){
-      var time = new Date().getTime() + 30000;
+      var time = new Date().getTime() + 300000;
       this.setData({
         timer: false
       })

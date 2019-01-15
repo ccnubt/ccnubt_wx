@@ -46,7 +46,7 @@ App({
         userInfo: 'hello',
         user_info: null,
       },
-      wxRequest(method, url, data, callback, errFun) {
+      wxRequest(method, url, data, callback, errFun=null) {
         // console.log(data)
         let api_key = wx.getStorageSync('api_key')
         // console.log(api_key)
@@ -63,7 +63,9 @@ App({
             callback(res.data);
           },
           fail: function (err) {
-            errFun(err);
+            if (errFun){
+              errFun(err);
+            }
           }
         })
       }
