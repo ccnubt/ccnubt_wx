@@ -39,7 +39,7 @@ Component({
     },
     formSubmit: function(e) {
       var that = this;
-      var code = e.detail.value.code
+      var code = String(e.detail.value.code) 
       app.wxRequest('GET','/user/receive/',{code}, function(res){
         if (res.result_code == 1){
           $Toast({

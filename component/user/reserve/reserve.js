@@ -81,7 +81,7 @@ Component({
       })
     },
     formSubmit: function(e) {
-      var code = e.detail.value.code
+      var code = String(e.detail.value.code)
       var that = this;
       app.wxRequest('GET', '/user/reservecode/', {
         code
