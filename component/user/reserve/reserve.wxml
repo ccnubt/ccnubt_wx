@@ -27,7 +27,9 @@
     </form>
   </view>
   <view wx:elif="{{status==1}}">
-    {{bt_info.name}}{{bt_info.sex}}
+    <view>队员姓名： {{bt_info.name}}</view>
+    <view>队员性别: {{bt_info.sex=='male'? '男':'女'}}</view>
+    
     <form bindsubmit='commit_code' class='form'>
       <view>问题描述：</view>
       <textarea name="detail" placeholder='问题描述' class='detail_input'></textarea>

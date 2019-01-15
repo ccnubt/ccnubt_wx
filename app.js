@@ -29,7 +29,7 @@ App({
                       url: '/pages/member/member',
                     })
                   }  
-                },3000)
+                },2000)
               },function(res){
                 // console.log('端口调用失败' + res.err_msg)
               })
@@ -41,8 +41,8 @@ App({
       },
     
       globalData: {
-        baseURL: 'https://bt.yuancl.site',
-        // baseURL: 'http://192.168.1.115:5000',
+        // baseURL: 'https://bt.yuancl.site',
+        baseURL: 'http://192.168.1.115:5000',
         userInfo: 'hello',
         user_info: null,
       },
