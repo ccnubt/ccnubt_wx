@@ -98,6 +98,7 @@ Component({
             type: 'warning',
             duration: 5
           });
+          // e.detail.value.code = '';
           that.setData({
             Value: ''
           })
