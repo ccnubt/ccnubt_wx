@@ -3,7 +3,7 @@
 {{code}}
 </view>
 <view class='timer'>
-  <i-count-down bindcallback="loadcode"  target="{{time}}" > </i-count-down>
+  <i-count-down wx:if="{{timer}}" bindcallback="loadcode"  target="{{time}}" > </i-count-down>
   <button class='but' bindtap='loadcode'>刷新</button>
 </view>
 <view class='tip'>

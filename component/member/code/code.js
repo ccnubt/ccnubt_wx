@@ -14,20 +14,31 @@ Component({
    */
   data: {
     code: 'xxxxxx',
-    time: 0
+    time: 0,
+    timer: false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    settime: function(){
+      var time = new Date().getTime() + 30000;
+      this.setData({
+        timer: false
+      })
+      this.setData({
+        time: time,
+        timer: true
+      })
+    },
     loadcode: function(){
       var that = this;
-      var code = that.data.code
-      app.wxRequest('GET','/user/mycode/',{param: {code}},function(res){
+      var code = that.data.code;
+      app.wxRequest('GET','/user/mycode/',{code:code},function(res){
         if (res.result_code==1){
+          that.settime();
           that.setData({
-            time: new Date().getTime()+30000,
             code: res.code
           })
         }
