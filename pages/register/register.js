@@ -25,19 +25,15 @@ Page({
     app.wxRequest('POST','/auth/register/',{
       info: { name,qq,sex,phone }
     }, function(res){
+      console.log(res)
       if (res.result_code == 1){
         var info = res.user_info;
         app.globalData.user_info  = info;
-        if (info.role==0){
-          wx.reLaunch({
+
+          wx.redirectTo({
             url: '/pages/user/user?page=me'
           })
-        }
-        else if (info.role==1){
-          wx.reLaunch({
-            url: '/pages/member/member?page=me'
-          })
-        }
+
       }
     })
   },

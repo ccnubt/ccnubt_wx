@@ -8,7 +8,7 @@ App({
         if (res.code) {
           //发起网络请求
           getApp().wxRequest('POST', '/auth/login/', { code: res.code }, function (res) {
-            if (res.result_code == 1) {
+            if (res.result_code == 1 || res.result_code == 2) {
               getApp().globalData.user_info = res['user_info'];
               console.log(res);
               wx.setStorage({ //本地缓存
@@ -17,7 +17,7 @@ App({
               });
               setTimeout(function () {
                 if (res['result_code'] == 2) //判断是否完善信息
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../register/register'
                   })
                 else if (res.user_info.role == 0) {
@@ -44,8 +44,8 @@ App({
   },
 
   globalData: {
-    // baseURL: 'https://bt.yuancl.site',
-    baseURL: 'http://192.168.1.115:5000',
+    baseURL: 'https://bt.yuancl.site',
+    // baseURL: 'http://192.168.1.115:5000',
     userInfo: 'hello',
     user_info: null,
   },
