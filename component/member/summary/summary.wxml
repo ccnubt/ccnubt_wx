@@ -1,0 +1,5 @@
+<!--component/member/summary/summary.wxml-->
+
+<view wx:for="{{summary}}" wx:for-item="s">
+  <text>{{s.name}} {{s.score}} {{s.count}}</text>
+</view>

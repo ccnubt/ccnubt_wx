@@ -5,6 +5,7 @@
     "i-toast": "../../dist/toast/index",
     "i-message": "../../dist/message/index",
     "m-order": "../../component/member/order/order",
+    "m-summary": "../../component/member/summary/summary",
     "m-reservation": "../../component/member/reservation/reservation",
     "m-me": "../../component/me/me",
     "m-activity": "../../component/activity/activity"
