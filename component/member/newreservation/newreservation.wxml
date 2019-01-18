@@ -1,6 +1,6 @@
 <wxs module="filter" src="../../../utils/dateFormat.wxs"></wxs>
 <view>
-  <view wx:for="{{reservations}}" wx:for-item="r">
+  <view wx:for="{{reservations}}" wx:for-item="r" wx:key="{{r.id}}">
     <i-card title="订单号{{r.id}}" extra="{{r.user_info.name[0]+'** '}}{{r.user_info.sex=='male'? '(男)':'(女)'}}" thumb="">
       <view slot="content">
         <view>

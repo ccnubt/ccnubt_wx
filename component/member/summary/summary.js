@@ -12,7 +12,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    summary:[]
+    summary:[],
+    month: new Date().getMonth() + 1
   },
 
   /**

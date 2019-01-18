@@ -1,5 +1,15 @@
 <!--component/member/summary/summary.wxml-->
 
-<view wx:for="{{summary}}" wx:for-item="s">
-  <text>{{s.name}} {{s.score}} {{s.count}}</text>
-</view>
+<view class='tittle'>{{month}}月份队员排名</view>
+<!-- <view wx:for="{{summary}}" wx:for-item="s">
+  <text>{{s.name}}</text>
+  <text>接单量： {{s.count}}</text>
+  <text>平均分： {{s.avg_score}}</text>
+  <text>总分： {{s.score}}</text>
+</view> -->
+<i-cell-group>
+  <i-cell wx:for="{{summary}}" wx:for-item="s" i-class="cell" wx:key="{{index}}"
+    title="{{s.name}}" value="{{s.score}}" label="本月接单数: {{s.count}}    平均用户评分: {{s.avg_score}}">
+    <view slot="icon" class="no">{{index+1}}</view>
+  </i-cell>
+</i-cell-group>
