@@ -6,6 +6,8 @@
     "i-collapse-item": "../../../dist/collapse-item/index",
     "i-rate": "../../../dist/rate/index",
     "i-button": "../../../dist/button/index",
-    "i-modal": "../../../dist/modal/index"
+    "i-modal": "../../../dist/modal/index",
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index"
   }
 }

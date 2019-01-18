@@ -1,9 +1,16 @@
 <!--component/reservation/reservation.wxml-->
 <wxs module="filter" src="../../../utils/dateFormat.wxs"></wxs>
 
+<i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="all" title="全部"></i-tab>
+    <i-tab key="doing" title="维修中"></i-tab>
+    <i-tab key="finish" title="已完成"></i-tab>
+</i-tabs>
+
 <view>
   <i-card  wx:for="{{reservations}}" wx:for-item="r" title="订单号{{r.id}}" class="card"
-  extra="{{status_tag[r.status+1]}} {{r.status==6? ','+(r.solved? '维修成功': '维修失败'): ''}}">
+  extra="{{status_tag[r.status+1]}} {{r.status==6? ','+(r.solved? '维修成功': '维修失败'): ''}}"
+  wx:if="{{current=='all' || (current=='doing'&&r.status<5) || (current=='finish'&&r.status>=5)}}">
     <view slot="content">
       <view>
         <view>问题描述: {{r.detail}} </view>
@@ -19,7 +26,7 @@
       </view>
     </view>
     <view slot="footer" wx:if="{{r.status>0}}">
-      <i-collapse-item title="点击查看详细内容"> 
+      <i-collapse-item title="点击查看用户信息"> 
         <view slot="content" class='detail'>
           <view wx:if="{{r.status>=1}}">
             <view>用户</view>

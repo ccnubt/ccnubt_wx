@@ -17,7 +17,8 @@ Component({
     reservations: [],
     status_tag: ['已取消', '待接单', '已接单', '维修中', '维修成功，待确认', '维修失败，待确认', '待评价', '已完成'],
     code_visible: false,
-    transfer_code: null
+    transfer_code: null,
+    current: 'all'
   },
 
   /**
@@ -99,6 +100,12 @@ Component({
           that.setData({ reservations: res.reservations })
         }
       })
+    },
+    handleChange({ detail }) { //tabs标签页控制
+      // console.log(detail.key)
+      this.setData({
+        current: detail.key
+      });
     }
   },
   lifetimes: {
