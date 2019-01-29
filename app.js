@@ -44,8 +44,8 @@ App({
   },
 
   globalData: {
-    baseURL: 'https://bt.yuancl.site',
-    // baseURL: 'http://192.168.1.115:5000',
+    baseURL: 'https://wx.ccnubt.club',
+    // baseURL: 'http://192.168.1.9:5000',
     userInfo: 'hello',
     user_info: null,
   },

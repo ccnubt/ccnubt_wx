@@ -73,6 +73,7 @@ Component({
     },
     handleChange({ detail }) { //tabs标签页控制
       // console.log(detail.key)
+      this.reload();
       this.setData({
         current: detail.key
       });

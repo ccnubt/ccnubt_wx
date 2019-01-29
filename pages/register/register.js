@@ -25,14 +25,14 @@ Page({
     app.wxRequest('POST','/auth/register/',{
       info: { name,qq,sex,phone }
     }, function(res){
-      console.log(res)
       if (res.result_code == 1){
         var info = res.user_info;
         app.globalData.user_info  = info;
 
-          wx.redirectTo({
+          wx.reLaunch({
             url: '/pages/user/user?page=me'
           })
+
 
       }
     })
