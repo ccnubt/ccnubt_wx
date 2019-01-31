@@ -24,7 +24,7 @@ Component({
       var that = this;
       app.wxRequest('GET','/user/summary/',{},function(res){
         if (res.result_code==1){
-          console.log(res.data)
+          // console.log(res.data)
           that.setData({
             summary: res.data
           })

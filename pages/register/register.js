@@ -19,7 +19,7 @@ Page({
     });
   },
   commit: function(e){
-    console.log(e);
+    // console.log(e);
     var name = e.detail.value.name;
     var sex = this.data.sex=='女'? 'female':'male'; 
     var qq = e.detail.value.qq;
