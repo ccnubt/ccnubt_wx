@@ -1,5 +1,5 @@
 <!--pages/evaluate/evaluate.wxml-->
-<view>
+<view class='evaluation'>
   <form bindsubmit='formSubmit'>
     <view>
       评分：<i-rate name="score" bind:change="onRate" value="{{score}}" size="30">{{score}}星 </i-rate>

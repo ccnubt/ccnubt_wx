@@ -36,7 +36,15 @@ Component({
     commit: function(e) {
       var detail = e.detail.value.detail;
       var formid = e.detail.formId;
-      console.log(formid)
+      // console.log(formid)
+      if (detail.length == 0) {
+        $Message({
+          content: '描述不能为空',
+          type: 'warning',
+          duration: 2
+        });
+        return ;
+      }
       app.wxRequest('POST', '/user/reserve/', {
         detail,
         formid

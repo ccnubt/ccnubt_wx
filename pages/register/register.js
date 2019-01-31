@@ -1,4 +1,7 @@
 var app = getApp();
+const {
+  $Message
+} = require('../../dist/base/index');
 Page({
 
   /**
@@ -21,19 +24,49 @@ Page({
     var sex = this.data.sex=='女'? 'female':'male'; 
     var qq = e.detail.value.qq;
     var phone = e.detail.value.phone;
-    console.log(sex);
+    // console.log(sex);
+    //检验
+    if (name.length == 0){
+      $Message({
+        content: '姓名不能为空',
+        type: 'error',
+        duration: 2
+      });
+      return ;
+    }
+    else if (name.length > 20){
+      $Message({
+        content: '姓名长度过长',
+        type: 'error',
+        duration: 2
+      });
+      return;
+    }
+    if( qq.length == 0){
+      $Message({
+        content: 'QQ号码不能为空',
+        type: 'error',
+        duration: 2
+      });
+      return;
+    }
+    if (phone.length !=11) {
+      $Message({
+        content: '手机号码格式错误',
+        type: 'error',
+        duration: 2
+      });
+      return;
+    }
     app.wxRequest('POST','/auth/register/',{
       info: { name,qq,sex,phone }
     }, function(res){
       if (res.result_code == 1){
         var info = res.user_info;
         app.globalData.user_info  = info;
-
           wx.reLaunch({
             url: '/pages/user/user?page=me'
           })
-
-
       }
     })
   },

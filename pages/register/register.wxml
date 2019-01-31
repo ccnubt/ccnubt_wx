@@ -1,7 +1,7 @@
 <!--register.wxml-->
 <form bindsubmit='commit'>
   <i-input name="name" value="{{name}}" title="姓名" autofocus placeholder="请输入姓名" bindchange="name_input" maxlength='10'/>
-  <i-radio-group name="sex" current="{{sex}}" bindchange="sex_radio">
+  <i-radio-group  name="sex" current="{{sex}}" bindchange="sex_radio">
       <i-radio value="男"></i-radio>
       <i-radio value="女"></i-radio>
   </i-radio-group>
@@ -9,3 +9,4 @@
   <i-input name="qq" value="{{qq}}" type="number" title="QQ号码" placeholder="请输入QQ号码" maxlength="12" />
   <button form-type='submit'>提交</button>
 </form>
+<i-message id="message" />

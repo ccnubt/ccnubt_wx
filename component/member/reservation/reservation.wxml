@@ -10,7 +10,7 @@
 <view>
   <i-card  wx:for="{{reservations}}" wx:for-item="r" title="订单号{{r.id}}" class="card" wx:key="{{r.id}}"
   extra="{{status_tag[r.status]}} {{r.status>=4? ','+(r.solved? '维修成功': '维修失败'): ''}}"
-  wx:if="{{current=='all' || (current=='doing'&&r.status<5) || (current=='finish'&&r.status>=5)}}">
+  wx:if="{{current=='all' || (current=='doing'&&r.status<5&&r.status>1) || current=='finish'&&r.status>=5}}">
     <view slot="content">
       <view>
         <view>问题描述: {{r.detail}} </view>

@@ -2,6 +2,7 @@
   "usingComponents": {
     "i-input": "../../dist/input/index",
     "i-radio-group": "../../dist/radio-group/index",
+    "i-message": "../../dist/message/index",
     "i-radio": "../../dist/radio/index"
   }
 }
