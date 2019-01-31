@@ -1,19 +1,22 @@
 <!--pages/user/bt_user.wxml-->
+<!--根据不同的操作加载页面-->
 <view style="padding-bottom:50px;">
   <m-reserve key="reserve" wx:if="{{current=='reserve'}}"></m-reserve>
   <m-reservation wx:if="{{current=='reservation'}}"> </m-reservation>
   <m-me key="me" wx:if="{{current=='me'}}"></m-me>
   <m-activity key="activity" wx:if="{{current=='activity'}}"> </m-activity>
 </view>
+
+<!--导航栏-->
 <block>
   <i-tab-bar current="{{current}}" fixed="true" bindchange="handleChange">
-    <i-tab-bar-item key="reserve" icon="brush" current-icon="brush_fill" title="预约"> 
-    </i-tab-bar-item>
+    <i-tab-bar-item key="reserve" icon="brush" current-icon="brush_fill" title="预约"></i-tab-bar-item>
     <i-tab-bar-item key="reservation" icon="createtask" current-icon="createtask_fill" title="订单状态"></i-tab-bar-item>
     <i-tab-bar-item key="activity" icon="activity" current-icon="activity_fill" title="活动"></i-tab-bar-item>
     <i-tab-bar-item key="me" icon="mine" current-icon="mine_fill"  title="我"></i-tab-bar-item>
   </i-tab-bar>
 </block>
+
 <i-toast id="toast" />
 <i-message id="message" />
 

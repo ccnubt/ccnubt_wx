@@ -9,7 +9,8 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "奔腾服务队",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
   }
 }
