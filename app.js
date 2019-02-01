@@ -20,12 +20,12 @@ App({
                   wx.redirectTo({
                     url: '../register/register'
                   })
-                else if (res.user_info.role == 0) {
+                else if (res.user_info.role == 0) {//成员身份为用户
                   wx.redirectTo({
                     url: '/pages/user/user',
                   })
                 }
-                else if (res.user_info.role == 1) {
+                else if (res.user_info.role == 1) {//成员身份为队员
                   wx.redirectTo({
                     url: '/pages/member/member',
                   })
@@ -33,11 +33,11 @@ App({
               }, 2000)
             }
           }, function (res) {
-            // console.log('端口调用失败' + res.err_msg)
+             console.log('端口调用失败' + res.err_msg)
           })
         }
         else {
-          // console.log('端口调用失败' + res.err_msg)
+           console.log('端口调用失败' + res.err_msg)
         }
       }
     })
@@ -51,7 +51,7 @@ App({
   },
   wxRequest(method, url, data, callback, errFun = null) {
     // console.log(data)
-    let api_key = wx.getStorageSync('api_key')
+    let api_key = wx.getStorageSync('api_key');//同步取出api_key
     // console.log(api_key)
     wx.request({
       url: getApp().globalData.baseURL + url + '?api_key=' + api_key,

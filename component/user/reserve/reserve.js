@@ -26,25 +26,38 @@ Component({
     ispassword: false, //是否密文显示 true为密文， false为明文。
     bt_info: null,
     status: 0,
-    code: null
+    code: null,
+    empty:true
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    isEmpty:function(e){
+      var that = this;
+      console.log(e.detail.value);
+      if(e.detail.value == ""){
+        that.setData({
+          empty: true
+        });
+        $Message({
+          content: '问题描述不能为空',
+          type: 'error',
+          duration: 5
+        });
+      }else{
+        that.setData({
+          empty:false
+        })
+      }
+
+    },
     commit: function(e) {
+      console.log(e);
       var detail = e.detail.value.detail;
       var formid = e.detail.formId;
-      // console.log(formid)
-      if (detail.length == 0) {
-        $Message({
-          content: '描述不能为空',
-          type: 'warning',
-          duration: 2
-        });
-        return ;
-      }
+      console.log(formid)
       app.wxRequest('POST', '/user/reserve/', {
         detail,
         formid
@@ -73,6 +86,13 @@ Component({
       this.setData({
         current: detail.key
       });
+      if(detail.key != 'reserve'){
+        $Toast({
+          content: '请输入奔腾队员发给您的6位接单码，单击空白区域关闭',
+          type: 'warning',
+          duration: 12
+        });
+      }
     },
     Focus: function(e) {
       var that = this;

@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!--登陆页面-->
 <view class='container'>
   <image src='../../static/img/bt.jpg'></image>
   <text>奔腾服务，竭诚为您</text>
