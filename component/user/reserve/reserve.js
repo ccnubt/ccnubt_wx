@@ -35,17 +35,21 @@ Component({
    */
   methods: {
     isEmpty:function(e){
+      //此方法仍然存在问题
+      //有时触点按钮，输入框并不会失去焦点，因此此函数不会被调用
       var that = this;
-      console.log(e.detail.value);
+      console.log(that);
       if(e.detail.value == ""){
         that.setData({
           empty: true
         });
-        $Message({
-          content: '问题描述不能为空',
-          type: 'error',
-          duration: 5
-        });
+        if(that.data.current == 'reserve'){
+          $Message({
+            content: '问题描述不能为空',
+            type: 'error',
+            duration: 5
+          });
+        }
       }else{
         that.setData({
           empty:false
