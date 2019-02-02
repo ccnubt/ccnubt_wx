@@ -25,7 +25,7 @@ Component({
       var id = e.currentTarget.dataset.id;
       var that = this;
       app.wxRequest('GET', '/user/confirm/' + id + '/', {}, function (res) {
-        console.log(res);
+        // console.log(res);
         if (res.result_coe == 1) {
           wx.showToast({
             title: '已确认',
@@ -57,7 +57,7 @@ Component({
       })
     },
     reload: function(){
-      console.log("订单重新获取");
+      // console.log("订单重新获取");
       wx.showLoading({
         title: '加载中',
       })

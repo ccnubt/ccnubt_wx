@@ -2,7 +2,10 @@
 App({
   onLaunch: function () {
     var that = this
-
+    var value = wx.getStorageSync('api_key');
+    if(value == ''){
+      that.globalData.first = 1;
+    }
     wx.login({
       success(res) {
         if (res.code) {
@@ -10,7 +13,7 @@ App({
           getApp().wxRequest('POST', '/auth/login/', { code: res.code }, function (res) {
             if (res.result_code == 1 || res.result_code == 2) {
               getApp().globalData.user_info = res['user_info'];
-              console.log(res);
+              // console.log(res);
               wx.setStorage({ //本地缓存
                 key: 'api_key',
                 data: res['api_key']
@@ -48,6 +51,7 @@ App({
     // baseURL: 'http://192.168.1.9:5000',
     userInfo: 'hello',
     user_info: null,
+    first:0 //判断是否是第一次登入（清除缓存之后又成为第一次登入）
   },
   wxRequest(method, url, data, callback, errFun = null) {
     // console.log(data)

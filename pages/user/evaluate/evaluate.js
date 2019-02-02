@@ -21,13 +21,13 @@ Page({
   onLoad: function (options) {
     
     this.setData({id:options.id})
-    console.log(this.data.id)
+    // console.log(this.data.id)
   },
   formSubmit: function(e){
     var e = e.detail.value.evaluation;
     var score = this.data.score;
     var id = this.data.id;
-    console.log(score+" "+e);
+    // console.log(score+" "+e);
     app.wxRequest('POST','/user/evaluate/'+id+'/',{score:score,evaluation:e},function(res){
       if (res.result_code==1){
         wx.showToast({

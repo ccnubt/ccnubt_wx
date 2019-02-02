@@ -12,3 +12,9 @@
   float: right;
   border-radius: 13px;
 }
+
+.null_view{
+  color: #dddee1;
+  margin-top: 5%;
+  text-align: center;
+}
