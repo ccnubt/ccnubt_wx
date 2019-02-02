@@ -47,7 +47,7 @@ Component({
         title: '加载中',
       })
       app.wxRequest('GET', '/user/unorder/', {}, function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }
@@ -58,7 +58,7 @@ Component({
   },
   lifetimes: {
     attached: function(){
-      console.log("加载");
+      // console.log("加载");
       this.reload();
     },
     ready: function () {

@@ -12,7 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    summary:[],
+    summary: [],
     month: new Date().getMonth() + 1
   },
 
@@ -20,11 +20,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    reload: function(){
-      console.log("重新获取统计数据");
+    reload: function () {
+      // console.log("重新获取统计数据");
       var that = this;
-      app.wxRequest('GET','/user/summary/',{},function(res){
-        if (res.result_code==1){
+      app.wxRequest('GET', '/user/summary/', {}, function (res) {
+        if (res.result_code == 1) {
           // console.log(res.data)
           that.setData({
             summary: res.data
@@ -33,8 +33,8 @@ Component({
       })
     }
   },
-  lifetimes:{
-    attached: function(){
+  lifetimes: {
+    attached: function () {
       this.reload();
     }
   }

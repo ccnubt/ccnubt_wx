@@ -20,7 +20,7 @@ Component({
    */
   methods: {
     reload: function () {
-      console.log("活动重新获取");
+      // console.log("活动重新获取");
       wx.showLoading({
         title: '加载中',
       })

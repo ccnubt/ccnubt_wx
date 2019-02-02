@@ -11,5 +11,5 @@
       </view>
     </i-card>
   </view>
-  <view wx:if="{{!reservations.length}}">没有新的订单</view>
+  <view wx:if="{{!reservations.length}}" class="null_view">暂无新的订单</view>
 </view>

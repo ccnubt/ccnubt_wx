@@ -53,17 +53,18 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    // 页面调用组件的方法
     var that = this;
     if(that.data.current == 'reservation'){
-      console.log("我是订单状态");
+      // console.log("我是订单状态");
       this.selectComponent("#reservation").reload();
     }
     else if(that.data.current == 'activity'){
-      console.log("我是活动界面");
+      // console.log("我是活动界面");
       var that = this.selectComponent("#activity").reload();
     }
     else{
-      console.log("我是我界面");
+      // console.log("我是我界面");
     }
   },
 

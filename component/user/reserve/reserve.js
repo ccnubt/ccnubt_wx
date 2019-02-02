@@ -38,7 +38,7 @@ Component({
       //此方法仍然存在问题
       //有时触点按钮，输入框并不会失去焦点，因此此函数不会被调用
       var that = this;
-      console.log(that);
+      // console.log(that);
       if(e.detail.value == ""){
         that.setData({
           empty: true
@@ -58,10 +58,10 @@ Component({
 
     },
     commit: function(e) {
-      console.log(e);
+      // console.log(e);
       var detail = e.detail.value.detail;
       var formid = e.detail.formId;
-      console.log(formid)
+      // console.log(formid)
       app.wxRequest('POST', '/user/reserve/', {
         detail,
         formid
@@ -90,7 +90,8 @@ Component({
       this.setData({
         current: detail.key
       });
-      if(detail.key != 'reserve'){
+
+      if(detail.key != 'reserve' && getApp().globalData.first==1){
         $Toast({
           content: '请输入奔腾队员发给您的6位接单码，单击空白区域关闭',
           type: 'warning',
