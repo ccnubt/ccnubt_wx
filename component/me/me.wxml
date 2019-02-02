@@ -1,6 +1,9 @@
 <!--component/me/me.wxml-->
+<view class='headView'>
+    <open-data class='icon' mode='aspectFit' type='userAvatarUrl'></open-data>
+    <view class='icon'/>
+</view>
 <view class='container'>
-  <open-data type='userAvatarUrl'></open-data>
   <open-data type='userNickName' class="img"></open-data>
 </view>
 <i-cell-group>

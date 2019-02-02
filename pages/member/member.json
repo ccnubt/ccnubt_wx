@@ -8,6 +8,7 @@
     "m-summary": "../../component/member/summary/summary",
     "m-reservation": "../../component/member/reservation/reservation",
     "m-me": "../../component/me/me",
-    "m-activity": "../../component/activity/activity"
+    "m-activity": "../../component/activity/activity",
+    "m-newreservation": "../../component/member/newreservation/newreservation"
   }
 }

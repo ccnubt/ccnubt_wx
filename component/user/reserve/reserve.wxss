@@ -10,18 +10,33 @@
   border-radius: 5px;
   padding: 10px;
 }
-.oder_button{
-  width: 50%;
-}
+
 .form{
   margin: 5px;
   pad: 10px;
 } */
+
+.describe_textarea{
+  border:1px solid #ccc;
+  width:100%;
+  overflow:auto;
+}
 .content{
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 200rpx;
+}
+
+.reset_button{
+  margin-left:25%;
+  margin-top:5%;
+  float:left;
+}
+
+.oder_button{
+  margin-left:20%;
+  margin-top:5%;
 }
 .iptbox{
   width: 80rpx;

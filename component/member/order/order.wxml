@@ -5,6 +5,6 @@
     <i-tab key="receive" title="转接"></i-tab>
 </i-tabs>
 
-<m-newreservation wx:if="{{current=='newreservation'}}"/> 
+<m-newreservation wx:if="{{current=='newreservation'}}" id="newreservation"/> 
 <m-code wx:elif="{{current=='code'}}"/> 
 <m-receive wx:elif="{{current=='receive'}}" />

@@ -25,7 +25,8 @@ Component({
       var id = e.currentTarget.dataset.id;
       var that = this;
       app.wxRequest('GET', '/user/confirm/' + id + '/', {}, function (res) {
-        if (res.result_code == 1) {
+        console.log(res);
+        if (res.result_coe == 1) {
           wx.showToast({
             title: '已确认',
             icon: 'success',
@@ -56,6 +57,7 @@ Component({
       })
     },
     reload: function(){
+      console.log("订单重新获取");
       wx.showLoading({
         title: '加载中',
       })
@@ -68,9 +70,6 @@ Component({
       })
       wx.hideLoading();
     },
-    onPullDownRefresh: function () {
-      this.reload();
-    },
     handleChange({ detail }) { //tabs标签页控制
       // console.log(detail.key)
       this.reload();
@@ -82,7 +81,6 @@ Component({
   lifetimes: {
     attached: function(){
       this.reload();
-
     },
     ready: function(){
       wx.hideLoading();

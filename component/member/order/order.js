@@ -22,6 +22,9 @@ Component({
       this.setData({
         current: detail.key
       });
+    },
+    reload: function () {
+      this.selectComponent("#newreservation").reload();
     }
   }
 })

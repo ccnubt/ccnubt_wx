@@ -93,6 +93,7 @@ Component({
       })
     },
     reload: function(){
+      console.log("重新获取订单");
       var that = this;
       app.wxRequest('GET', '/user/myorder/', {}, function (res) {
         // console.log(res.reservations)
