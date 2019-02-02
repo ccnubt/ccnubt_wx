@@ -81,7 +81,6 @@ Component({
   lifetimes: {
     attached: function(){
       this.reload();
-
     },
     ready: function(){
       wx.hideLoading();

@@ -1,13 +1,13 @@
 <view class='page'>
-  <m-order key="reserve" wx:if="{{current=='order'}}" />
-  <m-reservation ke="reservation" wx:if="{{current=='reservation'}}" /> 
+  <m-order key="reserve" wx:if="{{current=='order'}}" id="order"/>
+  <m-reservation ke="reservation" wx:if="{{current=='reservation'}}" id="reservation"/> 
   <m-me key="me" wx:if="{{current=='me'}}" />
-  <m-summary key="summary" wx:if="{{current=='summary'}}" />
-  <m-activity key="activity" wx:if="{{current=='activity'}}"/>
+  <m-summary key="summary" wx:if="{{current=='summary'}}" id="summary"/>
+  <m-activity key="activity" wx:if="{{current=='activity'}}" id="activity"/>
 </view>
 
 <block>
-  <i-tab-bar current="{{current}}" fixed="true" bindchange="handleChange">
+  <i-tab-bar current="{{current}}" fixed="true" color="#228B22" bindchange="handleChange">
     <i-tab-bar-item key="order" icon="brush" current-icon="brush_fill" title="接单"></i-tab-bar-item>
     <i-tab-bar-item key="reservation" icon="createtask" current-icon="createtask_fill" title="订单状态"></i-tab-bar-item>
     <i-tab-bar-item key="activity" icon="activity" current-icon="activity_fill" title="活动"></i-tab-bar-item>

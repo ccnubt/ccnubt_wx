@@ -21,6 +21,7 @@ Component({
    */
   methods: {
     reload: function(){
+      console.log("重新获取统计数据");
       var that = this;
       app.wxRequest('GET','/user/summary/',{},function(res){
         if (res.result_code==1){
