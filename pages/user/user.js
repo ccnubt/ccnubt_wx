@@ -58,13 +58,16 @@ Page({
     if(that.data.current == 'reservation'){
       // console.log("我是订单状态");
       this.selectComponent("#reservation").reload();
+      wx.stopPullDownRefresh();
     }
     else if(that.data.current == 'activity'){
       // console.log("我是活动界面");
       var that = this.selectComponent("#activity").reload();
+      wx.stopPullDownRefresh();
     }
     else{
       // console.log("我是我界面");
+      wx.stopPullDownRefresh();
     }
   },
 

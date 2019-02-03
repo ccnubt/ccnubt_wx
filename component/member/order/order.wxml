@@ -6,5 +6,5 @@
 </i-tabs>
 
 <m-newreservation wx:if="{{current=='newreservation'}}" id="newreservation"/> 
-<m-code wx:elif="{{current=='code'}}"/> 
-<m-receive wx:elif="{{current=='receive'}}" />
+<m-code wx:elif="{{current=='code'}}" id="code"/> 
+<m-receive wx:elif="{{current=='receive'}}" id = "receive"/>

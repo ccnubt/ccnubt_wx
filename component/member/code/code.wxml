@@ -4,7 +4,7 @@
 </view>
 <view class='timer'>
   <i-count-down wx:if="{{timer}}" bindcallback="loadcode"  target="{{time}}" > </i-count-down>
-  <button class='but' bindtap='loadcode'>刷新</button>
+  <button class='refresh_btn' bindtap='loadcode' hover-class='default'>刷新</button>
 </view>
 <view class='tip'>
 (温馨提示：5分钟内有效，只可以使用一次)

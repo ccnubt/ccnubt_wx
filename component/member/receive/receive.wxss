@@ -19,8 +19,12 @@
   height: 0;
 }
 .btn-area{
-  width: 80%;
+  width: 40%;
   background-color: orange;
   color:white;
   margin: 10% auto;
+}
+
+.default{
+  background: #dddee1 !important;
 }

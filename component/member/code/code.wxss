@@ -6,11 +6,17 @@
   color: red;
   letter-spacing: 2px;
 }
-.but{
-  width: 50%;
+.refresh_btn{
+  width: 40%;
   text-align: center;
   margin: 10px auto;
+  background: olive;
+  color: white
 }
+.default{
+  background: #dddee1 !important;
+}
+
 .tip{
   font-size: 14px;
   text-align: center;

@@ -18,3 +18,8 @@
   margin-top: 5%;
   text-align: center;
 }
+
+.order_btn{
+  margin-top: 5%;
+  margin-left: 37%;
+}

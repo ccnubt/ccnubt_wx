@@ -18,7 +18,9 @@ Component({
     status_tag: ['已取消', '待接单', '已接单', '维修中', '待确认', '待评价', '已完成'],
     code_visible: false,
     transfer_code: null,
-    current: 'all'
+    current: 'all',
+    doing:0,
+    finish:0
   },
 
   /**
@@ -95,10 +97,27 @@ Component({
     reload: function(){
       // console.log("重新获取订单");
       var that = this;
+      var num1 = 0;
+      var num2 = 0;;
       app.wxRequest('GET', '/user/myorder/', {}, function (res) {
         // console.log(res.reservations)
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
+          for(var i=0;i<res.reservations.length;i++){
+            if(res.reservations[i].status >= 2 && res.reservations.status <=5) {
+              num1=num1+1;
+              that.setData({
+                doing:num1
+              })
+            }
+            if(res.reservations[i].status == 6) {
+              num2=num2+1;
+              that.setData({
+                finish:num2
+              })
+            }
+          }
+          // console.log(that.data.doing+"   "+that.data.finish);
         }
       })
     },

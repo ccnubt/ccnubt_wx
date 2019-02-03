@@ -60,6 +60,10 @@ Component({
           $Toast.hide();
         }, 2000);
       })
+    },
+    reload:function(){
+      console.log("接单码");
+      this.loadcode();
     }
   },
   attached: function(){
