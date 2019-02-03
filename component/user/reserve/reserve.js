@@ -168,6 +168,9 @@ Component({
           })
         }
       })
+    },
+    reload:function(){
+      // 无事发生
     }
   }
 })
