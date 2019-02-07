@@ -1,0 +1,13 @@
+/* pages/forbidden/forbidden.wxss */
+.warn_icon{
+  margin: auto;
+}
+.container{
+  height: 100%;
+  width: 100%;
+
+}
+.warning{
+  padding: 10px;
+  color: red;
+}

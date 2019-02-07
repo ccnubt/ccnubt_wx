@@ -95,11 +95,15 @@ Component({
     reload: function(){
       // console.log("重新获取订单");
       var that = this;
+      wx.showLoading({
+        title: '加载中'
+      })
       app.wxRequest('GET', '/user/myorder/', {}, function (res) {
         // console.log(res.reservations)
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }
+        wx.hideLoading();
       })
     },
     handleChange({ detail }) { //tabs标签页控制

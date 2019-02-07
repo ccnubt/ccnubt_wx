@@ -19,7 +19,9 @@ App({
                 data: res['api_key']
               });
               setTimeout(function () {
-                if (res['result_code'] == 2) //判断是否完善信息
+                var result_code = res.result_code;
+                console.log(result_code);
+                if (result_code == 2) //判断是否完善信息
                   wx.redirectTo({
                     url: '../register/register'
                   })
@@ -35,6 +37,11 @@ App({
                 }
               }, 2000)
             }
+            else if (res.result_code == 401) { //用户被禁用
+              wx.redirectTo({
+                url: '/pages/forbidden/forbidden',
+              })
+            }
           }, function (res) {
              console.log('端口调用失败' + res.err_msg)
           })
@@ -48,7 +55,7 @@ App({
 
   globalData: {
     baseURL: 'https://wx.ccnubt.club',
-    // baseURL: 'http://192.168.1.9:5000',
+    // baseURL: 'http://192.168.0.8:5000',
     userInfo: 'hello',
     user_info: null,
     first:0 //判断是否是第一次登入（清除缓存之后又成为第一次登入）
