@@ -54,8 +54,8 @@ App({
   },
 
   globalData: {
-    // baseURL: 'https://wx.ccnubt.club',
-    baseURL: 'http://192.168.0.8:5000',
+    baseURL: 'https://wx.ccnubt.club',
+    // baseURL: 'http://192.168.0.8:5000',
     userInfo: 'hello',
     user_info: null,
     first:0 //判断是否是第一次登入（清除缓存之后又成为第一次登入）
