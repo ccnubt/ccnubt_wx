@@ -26,7 +26,7 @@
         </view>
       </view>
     </view>
-    <view slot="footer" wx:if="{{r.status>0}}">
+    <view slot="footer" wx:if="{{r.status>1}}">
       <i-collapse-item title="点击查看接单队员信息">
         <view slot="content" class='detail'>
           <view wx:if="{{r.status>=1}}">
