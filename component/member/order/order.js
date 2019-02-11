@@ -34,7 +34,11 @@ Component({
       }
     },
     reload: function () {
-      this.selectComponent("#newreservation").reload();
+      var that = this;
+      // console.log(that.data.current);
+      if(that.data.current == 'newreservation') this.selectComponent("#newreservation").reload();
+      else if(that.data.current == 'code') this.selectComponent('#code').reload();
+      else if(that.data.current == 'receive') this.selectComponent('#receive').reload();
     }
   }
 })

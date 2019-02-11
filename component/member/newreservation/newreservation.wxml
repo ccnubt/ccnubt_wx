@@ -6,7 +6,9 @@
         <view>
           <view>问题描述: {{r.detail}} </view>
           <view>创建时间: {{filter.dateFormat(r.create_time)}}</view>
-          <button data-id='{{r.id}}' bindtap='orderthis'>接单</button>
+          <view class='order_btn'>
+            <button data-id='{{r.id}}' bindtap='orderthis' type='primary' size='mini' >接单</button>
+          </view>
         </view>
       </view>
     </i-card>

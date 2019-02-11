@@ -53,23 +53,28 @@ Page({
   onPullDownRefresh: function () {
     var that = this;
     if(that.data.current == 'order'){
-      // console.log("我是接单");
+      // console.log("我是接单"+that.data.current);
       that.selectComponent("#order").reload();
+      wx.stopPullDownRefresh();
     }
     else if (that.data.current == 'reservation') {
       // console.log("我是订单状态");
       that.selectComponent("#reservation").reload();
+      wx.stopPullDownRefresh();
     }
     else if (that.data.current == 'activity') {
       // console.log("我是活动界面");
       that.selectComponent("#activity").reload();
+      wx.stopPullDownRefresh();
     }
     else if(that.data.current == 'summary'){
       // console.log("我是统计界面");
       that.selectComponent("#summary").reload();
+      wx.stopPullDownRefresh();
     }
     else {
       // console.log("我是我界面");
+      wx.stopPullDownRefresh();
     }
   },
 

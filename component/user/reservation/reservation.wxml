@@ -8,28 +8,26 @@
 
 
 <view>
-  <i-card wx:for="{{reservations}}" wx:for-item="r" wx:key="r.id" i-class="card" title="订单编号:{{r.id}}" 
-  extra="{{status_tag[r.status]}} {{r.status>=4? ','+(r.solved? '维修成功': '维修失败'): ''}}" 
-  wx:if="{{current=='all' || (current=='doing'&&r.status<5&&r.status>1) || current=='finish'&&r.status>=5}}">
+  <i-card wx:for="{{reservations}}" wx:for-item="r" wx:key="r.id" i-class="card" title="订单编号:{{r.id}}" extra="{{status_tag[r.status]}} {{r.status>=4? ','+(r.solved? '维修成功': '维修失败'): ''}}" wx:if="{{current=='all' || (current=='doing'&&r.status<5&&r.status>1) || current=='finish'&&r.status>=5}}">
     <view slot="content">
       <view>
-        <view>问题描述: {{r.detail}} </view>
         <view>创建时间: {{filter.dateFormat(r.create_time)}}</view>
+        <view>问题描述: {{r.detail}} </view>
         <view wx-if="{{r.status==1}}">
-          <button bindtap='cancel' data-id='{{r.id}}'>取消订单</button>
+          <button bindtap='cancel' data-id='{{r.id}}' type='primary' size='mini' class='default_btn'>取消订单</button>
         </view>
         <view wx-if="{{r.status==4}}">
-          <button bindtap='confirm' data-id='{{r.id}}'>确认</button>
+          <button bindtap='confirm' data-id='{{r.id}}' type='primary' size='mini' class='default_btn'>确认</button>
         </view>
         <view wx-if="{{r.status==5}}">
-          <button bindtap='evaluate' data-id='{{r.id}}'>评价</button>
+          <button bindtap='evaluate' data-id='{{r.id}}' type='primary' size='mini' class='default_btn'>评价</button>
         </view>
       </view>
     </view>
     <view slot="footer" wx:if="{{r.status>1}}">
       <i-collapse-item title="点击查看接单队员信息">
         <view slot="content" class='detail'>
-          <view wx:if="{{r.status>=1}}">
+          <view>
             <view>姓名： {{r.bt_info.name}}</view>
             <view>性别： {{r.bt_info.sex=='male'? '男':'女'}}</view>
             <view>手机： {{r.bt_info.phone}}</view>

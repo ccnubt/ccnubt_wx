@@ -8,7 +8,7 @@
     </view>
     <input name="code" type='number' value='{{Value}}' password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
     <view>
-      <button class="btn-area" formType="submit">提交</button>
+      <button class="btn-area" formType="submit" hover-class='default'>提交</button>
     </view>
   </form>
 </view>
