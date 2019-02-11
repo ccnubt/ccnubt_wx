@@ -123,8 +123,8 @@ Component({
             finish: num2
           })
           // console.log(that.data.doing+"   "+that.data.finish);
+          wx.hideLoading();
         }
-        wx.hideLoading();
       })
     },
     handleChange({ detail }) { //tabs标签页控制

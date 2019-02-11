@@ -51,8 +51,8 @@ Component({
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }
+        wx.hideLoading();
       })
-      wx.hideLoading();
       // that.setData({ loading: false });
     }
   },
@@ -60,9 +60,6 @@ Component({
     attached: function(){
       // console.log("加载");
       this.reload();
-    },
-    ready: function () {
-      wx.hideLoading();
     }
   }
 })

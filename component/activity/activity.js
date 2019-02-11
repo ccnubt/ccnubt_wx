@@ -30,16 +30,13 @@ Component({
         if (res.result_code == 1) {
           that.setData({ activities:res.activities })
         }
+        wx.hideLoading();
       })
-      wx.hideLoading();
     }
   },
   lifetimes: {
     attached: function () {
       this.reload();
-    },
-    ready: function () {
-      wx.hideLoading();
     }
   }
 })
