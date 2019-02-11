@@ -22,5 +22,16 @@
   <i-cell title="修改个人信息" is-link url="/pages/register/register">
     <i-icon slot="icon" type='brush_fill' > </i-icon>
   </i-cell>
+  <i-cell title="投诉和反馈" bind:click="handleOpen">
+    <i-icon slot="icon" type='emoji'></i-icon>
+  </i-cell>
 </i-cell-group>
+
+<i-modal title="投诉和反馈" visible="{{ visible }}" bind:ok="handleClose" bind:cancel="handleClose">
+    <view>如果您对该程序有建议或意见</view>
+    <view>或是对服务队的服务有任何问题</view>
+    <view>欢迎发送邮件至</view>
+    <view>ccnubt@qq.com</view>
+    <view>进行反馈</view>
+</i-modal>
 

@@ -30,5 +30,5 @@
   height: 300rpx;
   width: 300rpx;
   border-radius: 50%;
-  border: 50rpx solid #f1f1f1;
+  border: 55rpx solid #f1f1f1;
 }
