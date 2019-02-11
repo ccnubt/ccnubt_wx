@@ -99,6 +99,9 @@ Component({
       var that = this;
       var num1 = 0;
       var num2 = 0;;
+      wx.showLoading({
+        title: '加载中'
+      })
       app.wxRequest('GET', '/user/myorder/', {}, function (res) {
         // console.log(res.reservations)
         if (res.result_code == 1) {
@@ -119,6 +122,7 @@ Component({
           }
           // console.log(that.data.doing+"   "+that.data.finish);
         }
+        wx.hideLoading();
       })
     },
     handleChange({ detail }) { //tabs标签页控制

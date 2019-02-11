@@ -1,0 +1,4 @@
+<view class='container'>
+  <icon type="warn" class='warn_icon' size='100' />
+  <text class='warning'>您的账号已被禁用</text>
+</view>

@@ -4,13 +4,14 @@
     "pages/register/register",
     "pages/user/user",
     "pages/user/evaluate/evaluate",
-    "pages/member/member"
+    "pages/member/member",
+    "pages/forbidden/forbidden"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "奔腾服务队",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh":true
+    "enablePullDownRefresh": true
   }
 }

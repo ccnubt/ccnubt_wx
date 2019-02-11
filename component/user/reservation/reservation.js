@@ -67,8 +67,8 @@ Component({
         if (res.result_code == 1) {
           that.setData({ reservations: res.reservations })
         }
+        wx.hideLoading();
       })
-      wx.hideLoading();
     },
     handleChange({ detail }) { //tabs标签页控制
       // console.log(detail.key)
@@ -81,9 +81,6 @@ Component({
   lifetimes: {
     attached: function(){
       this.reload();
-    },
-    ready: function(){
-      wx.hideLoading();
     }
   }
 })

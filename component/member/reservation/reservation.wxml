@@ -13,32 +13,6 @@
       <view>
         <view>问题描述: {{r.detail}} </view>
         <view>创建时间: {{filter.dateFormat(r.create_time)}}</view>
-        <i-steps>
-          <i-step status="finish">
-            <view slot="title">
-              已完成
-            </view>
-            <view slot="content">
-              这里是该步骤的描述信息
-            </view>
-          </i-step>
-          <i-step status="process">
-            <view slot="title">
-              进行中
-            </view>
-            <view slot="content">
-              这里是该步骤的描述信息
-            </view>
-          </i-step>
-          <i-step status="">
-            <view slot="title">
-              错误
-            </view>
-            <view slot="content">
-              这里是该步骤的描述信息
-            </view>
-          </i-step>
-        </i-steps>
         <view wx-if="{{r.status==2}}">
           <button bindtap='repair' data-id='{{r.id}}' type='primary' size='mini' class='fix_btn'>维修</button>
         </view>
