@@ -102,7 +102,7 @@ Component({
       // console.log("重新获取订单");
       var that = this;
       var num1 = 0;
-      var num2 = 0;;
+      var num2 = 0;
       wx.showLoading({
         title: '加载中'
       })

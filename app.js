@@ -3,6 +3,7 @@ App({
   onLaunch: function () {
     var that = this
     var value = wx.getStorageSync('api_key');
+    // console.log("value="+value);
     if(value == ''){
       that.globalData.first = 1;
     }
@@ -20,7 +21,7 @@ App({
               });
               setTimeout(function () {
                 var result_code = res.result_code;
-                console.log(result_code);
+                // console.log(result_code);
                 if (result_code == 2) //判断是否完善信息
                   wx.redirectTo({
                     url: '../register/register'

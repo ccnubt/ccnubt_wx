@@ -7,7 +7,7 @@
 <!--预约-->
 <view class='reserve' wx:if="{{current=='reserve'}}" style='margin-top:5%;'>
   <form bindsubmit='commit' class='form' report-submit="true">
-    <textarea name="detail" placeholder='问题描述...例如:从昨天下午开始，启动电脑后黑屏。屏幕中央有光标，可移动。' class='detail_input' bindinput='isEmpty' placeholder-style='font-size:16px'></textarea>
+    <textarea name="detail" placeholder='问题描述...例如:从昨天下午开始，启动电脑后黑屏。屏幕中央有光标，可移动。' class='describe_textarea' bindinput='isEmpty' placeholder-style='font-size:16px'></textarea>
       <!-- <i-button form-type='reset' type="info" shape="circle" size="small" inline="true">重置</i-button> -->
       <!-- <i-button form-type='submit' type="info" shape="circle" size="small" inline="true">预约</i-button> -->
       <button form-type='reset' class='reset_button' size='mini' type='primary'>重置</button>
@@ -36,8 +36,8 @@
     
     <form bindsubmit='commit_code' class='form'>
       <view>问题描述：</view>
-      <textarea name="detail" placeholder='问题描述' class='detail_input'></textarea>
-      <button form-type='submit' class='oder_button'>预约</button>
+      <textarea name="detail" placeholder='问题描述'></textarea>
+      <button form-type='submit' class='btn-area'>预约</button>
     </form>
   </view>
 </view>

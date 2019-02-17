@@ -44,3 +44,7 @@
     </view>
   </i-card>
 </view>
+
+<view wx:if="{{!reservations.length}}" class='null_view'>暂无订单信息</view>
+<view wx:elif="{{current == 'doing' && doing == 0}}" class='null_view'>暂无订单信息</view>
+<view wx:elif="{{current == 'finish' && finish == 0}}" class='null_view'>暂无订单信息</view>
