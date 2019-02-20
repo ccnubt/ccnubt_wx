@@ -42,7 +42,8 @@ Component({
       })
     },
     code_hide: function(){
-      this.setData({ code_visible: false })
+      this.setData({ code_visible: false });
+      this.reload();
     },
     r_transfer: function(e){
       var id = e.currentTarget.dataset.id;
@@ -63,7 +64,7 @@ Component({
             $Toast.hide();
           }, 2000);
         }
-        console.log(res)
+        // console.log(res)
       })
     },
     r_success: function (e) {

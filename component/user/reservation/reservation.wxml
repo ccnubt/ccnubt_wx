@@ -14,13 +14,13 @@
         <view>创建时间: {{filter.dateFormat(r.create_time)}}</view>
         <view>问题描述: {{r.detail}} </view>
         <view wx-if="{{r.status==1}}">
-          <button bindtap='cancel' data-id='{{r.id}}' type='primary' size='mini' class='default_btn'>取消订单</button>
+          <button bindtap='cancel' data-id='{{r.id}}' type='primary' size='mini' class='console_btn'>取消订单</button>
         </view>
         <view wx-if="{{r.status==4}}">
-          <button bindtap='confirm' data-id='{{r.id}}' type='primary' size='mini' class='default_btn'>确认</button>
+          <button bindtap='confirm' data-id='{{r.id}}' type='primary' size='mini' class='confirm_btn'>确认</button>
         </view>
         <view wx-if="{{r.status==5}}">
-          <button bindtap='evaluate' data-id='{{r.id}}' type='primary' size='mini' class='default_btn'>评价</button>
+          <button bindtap='evaluate' data-id='{{r.id}}' type='primary' size='mini' class='evaluate_btn'>评价</button>
         </view>
       </view>
     </view>

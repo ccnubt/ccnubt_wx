@@ -1,0 +1,10 @@
+.btn-area{
+  width: 60%;
+  background-color: orange;
+  color:white;
+  margin: 20% auto;
+}
+
+.default{
+  background: #dddee1 !important;
+}
