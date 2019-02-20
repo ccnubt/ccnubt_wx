@@ -2,3 +2,9 @@
 .card{
   margin: 5px;
 }
+
+.null_view{
+  color: #dddee1;
+  margin-top: 5%;
+  text-align: center;
+}

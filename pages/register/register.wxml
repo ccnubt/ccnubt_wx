@@ -7,6 +7,6 @@
   </i-radio-group>
   <i-input name="phone" value="{{phone}}" type="number" title="手机号码" placeholder="请输入手机号码" maxlength='11'/>
   <i-input name="qq" value="{{qq}}" type="number" title="QQ号码" placeholder="请输入QQ号码" maxlength="12" />
-  <button form-type='submit'>提交</button>
+  <button form-type='submit' class='btn-area' hover-class='default'>提交</button>
 </form>
 <i-message id="message" />

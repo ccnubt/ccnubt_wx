@@ -3,22 +3,11 @@
   margin: 5px 5px;
   height: 100%;
 }
-/*.detail_input{
-  background-color: gainsboro;
-  margin: auto;
-  border: 1px greenyellow solid;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.form{
-  margin: 5px;
-  pad: 10px;
-} */
 
 .describe_textarea{
+  margin-left: 5%;
   border:1px solid #ccc;
-  width:100%;
+  width:90%;
   overflow:auto;
 }
 .content{
@@ -31,7 +20,6 @@
 .reset_button{
   margin-left:25%;
   margin-top:5%;
-  float:left;
 }
 
 .oder_button{
@@ -53,8 +41,12 @@
   height: 0;
 }
 .btn-area{
-  width: 80%;
+  width: 60%;
   background-color: orange;
   color:white;
-  margin: 10% auto;
+  margin: 20% auto;
+}
+
+.default{
+  background: #dddee1 !important;
 }

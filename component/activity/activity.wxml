@@ -17,3 +17,5 @@
     </view>
   </i-card>
 </view>
+
+<view wx:if="{{!activities.length}}" class='null_view'>暂无活动信息</view>

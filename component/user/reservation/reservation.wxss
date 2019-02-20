@@ -3,7 +3,26 @@
   margin: 10px;
 }
 
-.default_btn{
+.console_btn{
   margin-top: 5%;
+  text-align: center;
+  margin-left: 32%;
+}
+
+.confirm_btn{
+  margin-top: 5%;
+  text-align: center;
   margin-left: 37%;
+}
+
+.evaluate_btn{
+  margin-top: 5%;
+  text-align: center;
+  margin-left: 37%;
+}
+
+.null_view{
+  color: #dddee1;
+  margin-top: 5%;
+  text-align: center;
 }

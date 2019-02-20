@@ -90,7 +90,7 @@ Component({
       this.setData({
         current: detail.key
       });
-
+      // console.log(getApp().globalData.first);
       if(detail.key != 'reserve' && getApp().globalData.first==1){
         $Toast({
           content: '请输入奔腾队员发给您的6位接单码，单击空白区域关闭',
