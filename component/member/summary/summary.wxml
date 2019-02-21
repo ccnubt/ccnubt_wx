@@ -13,3 +13,5 @@
     <view slot="icon" class="no">{{index+1}}</view>
   </i-cell>
 </i-cell-group>
+
+<view wx:if="{{!summary.length}}" class='null_view'>暂无排名信息</view>
