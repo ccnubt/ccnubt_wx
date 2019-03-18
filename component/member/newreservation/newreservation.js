@@ -37,6 +37,13 @@ Component({
             duration: 1000
           })
           that.reload();
+        }else{
+          wx.showToast({
+            title: '接单失败', 
+            icon:'fail',
+            duration:1000
+          })
+          that.reload();
         }
       })
     },
