@@ -81,6 +81,12 @@ Component({
             type: 'error',
             duration: 5
           });
+        }else{
+          $Message({
+            content:'出现了未知错误，请稍后重试',
+            type:'error',
+            duration:5
+          });
         }
       })
     },
